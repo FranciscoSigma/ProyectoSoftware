@@ -72,6 +72,7 @@
     <Compile Include="conexion\ProductosMasVendidos.cs" />
     <Compile Include="Dominio\MejoresProductos.cs" />
     <Compile Include="Dominio\UserModel.cs" />
+    <Compile Include="Empleado.cs" />
     <Compile Include="frmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
