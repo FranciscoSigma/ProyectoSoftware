@@ -50,7 +50,10 @@ namespace Proyecto
         }
         private void Logout(object sender, FormClosedEventArgs e)
         {
+            txtContraseña.Clear();
+            txtUsuario.Clear();
             this.Show();
+            txtUsuario.Focus();
         }
 
         private void txtUsuario_Enter(object sender, EventArgs e)

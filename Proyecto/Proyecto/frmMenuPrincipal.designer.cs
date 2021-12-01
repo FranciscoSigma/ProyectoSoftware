@@ -34,28 +34,30 @@
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panMenu = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVender = new System.Windows.Forms.Button();
+            this.btnInventario = new System.Windows.Forms.Button();
+            this.btnProveedor = new System.Windows.Forms.Button();
+            this.btncliente = new System.Windows.Forms.Button();
+            this.btnProductosMasVendiso = new System.Windows.Forms.Button();
+            this.btnEmpelados = new System.Windows.Forms.Button();
             this.panFormularios = new System.Windows.Forms.Panel();
             this.lblSubtitulo = new System.Windows.Forms.Label();
             this.lblBiblioTecos = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picLogotipo = new System.Windows.Forms.PictureBox();
             this.lnlPuesto = new System.Windows.Forms.Label();
             this.lblnombre = new System.Windows.Forms.Label();
             this.lblapellidos = new System.Windows.Forms.Label();
             this.lblemail = new System.Windows.Forms.Label();
+            this.btnReporte = new System.Windows.Forms.Button();
+            this.lblLogout = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panCintillo.SuspendLayout();
             this.panMenu.SuspendLayout();
             this.panFormularios.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogotipo)).BeginInit();
             this.SuspendLayout();
             // 
             // panCintillo
@@ -120,14 +122,16 @@
             // 
             this.panMenu.AutoScroll = true;
             this.panMenu.BackColor = System.Drawing.Color.DimGray;
-            this.panMenu.Controls.Add(this.button6);
-            this.panMenu.Controls.Add(this.button5);
-            this.panMenu.Controls.Add(this.button4);
-            this.panMenu.Controls.Add(this.button3);
-            this.panMenu.Controls.Add(this.button2);
-            this.panMenu.Controls.Add(this.button1);
+            this.panMenu.Controls.Add(this.pictureBox2);
+            this.panMenu.Controls.Add(this.lblLogout);
+            this.panMenu.Controls.Add(this.btnReporte);
+            this.panMenu.Controls.Add(this.btnVender);
+            this.panMenu.Controls.Add(this.btnInventario);
+            this.panMenu.Controls.Add(this.btnProductosMasVendiso);
+            this.panMenu.Controls.Add(this.btncliente);
+            this.panMenu.Controls.Add(this.btnProveedor);
+            this.panMenu.Controls.Add(this.btnEmpelados);
             this.panMenu.Controls.Add(this.panel1);
-            this.panMenu.Controls.Add(this.picLogotipo);
             this.panMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panMenu.Location = new System.Drawing.Point(0, 35);
             this.panMenu.Name = "panMenu";
@@ -135,66 +139,66 @@
             this.panMenu.TabIndex = 1;
             this.panMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panMenu_MouseDown);
             // 
-            // button6
+            // btnVender
             // 
-            this.button6.BackColor = System.Drawing.Color.DimGray;
-            this.button6.Location = new System.Drawing.Point(47, 474);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(226, 60);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Vender";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnVender.BackColor = System.Drawing.Color.DimGray;
+            this.btnVender.Location = new System.Drawing.Point(39, 329);
+            this.btnVender.Name = "btnVender";
+            this.btnVender.Size = new System.Drawing.Size(226, 60);
+            this.btnVender.TabIndex = 10;
+            this.btnVender.Text = "Vender";
+            this.btnVender.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnInventario
             // 
-            this.button5.BackColor = System.Drawing.Color.DimGray;
-            this.button5.Location = new System.Drawing.Point(47, 707);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(226, 60);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Producto";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnInventario.BackColor = System.Drawing.Color.DimGray;
+            this.btnInventario.Location = new System.Drawing.Point(39, 395);
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.Size = new System.Drawing.Size(226, 60);
+            this.btnInventario.TabIndex = 9;
+            this.btnInventario.Text = "Inventario";
+            this.btnInventario.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnProveedor
             // 
-            this.button4.BackColor = System.Drawing.Color.DimGray;
-            this.button4.Location = new System.Drawing.Point(47, 627);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(226, 60);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Proveedor";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnProveedor.BackColor = System.Drawing.Color.DimGray;
+            this.btnProveedor.Location = new System.Drawing.Point(39, 461);
+            this.btnProveedor.Name = "btnProveedor";
+            this.btnProveedor.Size = new System.Drawing.Size(226, 60);
+            this.btnProveedor.TabIndex = 8;
+            this.btnProveedor.Text = "Proveedor";
+            this.btnProveedor.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btncliente
             // 
-            this.button3.BackColor = System.Drawing.Color.DimGray;
-            this.button3.Location = new System.Drawing.Point(47, 398);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(226, 60);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Cliente";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btncliente.BackColor = System.Drawing.Color.DimGray;
+            this.btncliente.Location = new System.Drawing.Point(39, 254);
+            this.btncliente.Name = "btncliente";
+            this.btncliente.Size = new System.Drawing.Size(226, 60);
+            this.btncliente.TabIndex = 7;
+            this.btncliente.Text = "Cliente";
+            this.btncliente.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnProductosMasVendiso
             // 
-            this.button2.BackColor = System.Drawing.Color.DimGray;
-            this.button2.Location = new System.Drawing.Point(47, 551);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(226, 60);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Graficas";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnProductosMasVendiso.BackColor = System.Drawing.Color.DimGray;
+            this.btnProductosMasVendiso.Location = new System.Drawing.Point(39, 527);
+            this.btnProductosMasVendiso.Name = "btnProductosMasVendiso";
+            this.btnProductosMasVendiso.Size = new System.Drawing.Size(226, 60);
+            this.btnProductosMasVendiso.TabIndex = 6;
+            this.btnProductosMasVendiso.Text = "Productos mas vendidos";
+            this.btnProductosMasVendiso.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnEmpelados
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.Location = new System.Drawing.Point(47, 319);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 60);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Empleados";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEmpelados.BackColor = System.Drawing.Color.DimGray;
+            this.btnEmpelados.Location = new System.Drawing.Point(39, 186);
+            this.btnEmpelados.Name = "btnEmpelados";
+            this.btnEmpelados.Size = new System.Drawing.Size(226, 60);
+            this.btnEmpelados.TabIndex = 0;
+            this.btnEmpelados.Text = "Empleados";
+            this.btnEmpelados.UseVisualStyleBackColor = false;
+            this.btnEmpelados.Click += new System.EventHandler(this.button1_Click);
             // 
             // panFormularios
             // 
@@ -243,31 +247,10 @@
             this.panel1.Controls.Add(this.lnlPuesto);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 150);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 152);
             this.panel1.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Proyecto.Properties.Resources.account;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(105, 115);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // picLogotipo
-            // 
-            this.picLogotipo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picLogotipo.Image = global::Proyecto.Properties.Resources.icons8_game_64__1_;
-            this.picLogotipo.Location = new System.Drawing.Point(0, 0);
-            this.picLogotipo.Name = "picLogotipo";
-            this.picLogotipo.Size = new System.Drawing.Size(300, 150);
-            this.picLogotipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogotipo.TabIndex = 0;
-            this.picLogotipo.TabStop = false;
             // 
             // lnlPuesto
             // 
@@ -309,6 +292,48 @@
             this.lblemail.TabIndex = 4;
             this.lblemail.Text = "Email:";
             // 
+            // btnReporte
+            // 
+            this.btnReporte.BackColor = System.Drawing.Color.DimGray;
+            this.btnReporte.Location = new System.Drawing.Point(39, 593);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(226, 60);
+            this.btnReporte.TabIndex = 11;
+            this.btnReporte.Text = "Reporte por periodo";
+            this.btnReporte.UseVisualStyleBackColor = false;
+            // 
+            // lblLogout
+            // 
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogout.Location = new System.Drawing.Point(86, 767);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(142, 25);
+            this.lblLogout.TabIndex = 12;
+            this.lblLogout.Text = "Cerrar sesión";
+            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Proyecto.Properties.Resources.logout;
+            this.pictureBox2.Location = new System.Drawing.Point(39, 764);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(41, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Proyecto.Properties.Resources.account;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(105, 115);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -326,12 +351,13 @@
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.panCintillo.ResumeLayout(false);
             this.panMenu.ResumeLayout(false);
+            this.panMenu.PerformLayout();
             this.panFormularios.ResumeLayout(false);
             this.panFormularios.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogotipo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -343,23 +369,25 @@
         private System.Windows.Forms.Panel panFormularios;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnMinimizar;
-        private System.Windows.Forms.PictureBox picLogotipo;
 
         private System.Windows.Forms.Label lblBiblioTecos;
 
         private System.Windows.Forms.Label lblSubtitulo;
         private System.Windows.Forms.Button btnMaximizar;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVender;
+        private System.Windows.Forms.Button btnInventario;
+        private System.Windows.Forms.Button btnProveedor;
+        private System.Windows.Forms.Button btncliente;
+        private System.Windows.Forms.Button btnProductosMasVendiso;
+        private System.Windows.Forms.Button btnEmpelados;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblemail;
         private System.Windows.Forms.Label lblapellidos;
         private System.Windows.Forms.Label lblnombre;
         private System.Windows.Forms.Label lnlPuesto;
+        private System.Windows.Forms.Button btnReporte;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblLogout;
     }
 }

@@ -72,6 +72,12 @@
     <Compile Include="conexion\ProductosMasVendidos.cs" />
     <Compile Include="Dominio\MejoresProductos.cs" />
     <Compile Include="Dominio\UserModel.cs" />
+    <Compile Include="frmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProducto.designer.cs">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmpleadosAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     <Compile Include="Dominio\SalesListing.cs" />
     <Compile Include="Dominio\SalesReport.cs" />
     <Compile Include="UserLoginCache.cs" />
+    <EmbeddedResource Include="frmProducto.resx">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleadosAdministrador.resx">
       <DependentUpon>frmEmpleadosAdministrador.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +220,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

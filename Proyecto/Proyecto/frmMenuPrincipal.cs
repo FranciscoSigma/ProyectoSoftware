@@ -239,6 +239,20 @@ namespace Proyecto
             lnlPuesto.Text = UserLoginCache.Puesto;
         }
 
+        private void lblLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Estas seguro de cerrar sesión?", "Advertencia",
+           MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Estas seguro de cerrar sesión?", "Advertencia",
+           MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close();
+        }
+
         private void panFormularios_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
