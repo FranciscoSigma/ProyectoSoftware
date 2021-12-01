@@ -14,6 +14,7 @@ namespace Proyecto
         public DateTime endDate { get; private set; }
         public List<SalesListing> salesListing { get; private set; }
         public List<NetSalesByPeriod> netSalesByPeriod { get; private set; }
+        public List<MejoresProductos> mejoresPorductos { get; private set; }
         public double totalNetSales { get; private set; }
 
         //Methods
@@ -109,5 +110,12 @@ namespace Proyecto
             }
         }
 
+        public void createReporteProdcutosMasVendidos(DateTime fromDate, DateTime toDate)
+        {
+            reportDate = DateTime.Now;
+            startDate = fromDate;
+            endDate = toDate;
+            mejoresPorductos = new List(Of BestProducts)()
+        }
     }
 }

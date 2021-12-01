@@ -69,6 +69,8 @@
     <Compile Include="conexion\Conexion.cs" />
     <Compile Include="conexion\DatosUsuario.cs" />
     <Compile Include="conexion\OrdenesVenta.cs" />
+    <Compile Include="conexion\ProductosMasVendidos.cs" />
+    <Compile Include="Dominio\MejoresProductos.cs" />
     <Compile Include="Dominio\UserModel.cs" />
     <Compile Include="frmEmpleadosAdministrador.cs">
       <SubType>Form</SubType>
