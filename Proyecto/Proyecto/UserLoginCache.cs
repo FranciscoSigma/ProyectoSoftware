@@ -16,5 +16,6 @@ namespace Proyecto
         public static string ApellidoPaterno { get; set; }
         public static string Puesto { get; set; }
         public static string Email { get; set; }
+        public static decimal Telefono { get; set; }
     }
 }

@@ -130,7 +130,6 @@ C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Pro
 C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Proyecto.frmEmpleadosAdministrador.resources
 C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Proyecto.frmMenuPrincipal.resources
 C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Proyecto.Login.resources
-C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Proyecto.Menu.resources
 C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Proyecto.Properties.Resources.resources
 C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Proyecto.ReportePeriodo.resources
 C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.cache
@@ -153,3 +152,4 @@ C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\bin\Debug\K4o
 C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\bin\Debug\MySql.Data.xml
 C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Proyecto.exe.config
+C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Proyecto.ProductoMasVendido.resources

@@ -226,6 +226,19 @@ namespace Proyecto
             OcultarSubMenu();
         }
 
+        private void frmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            CargarUsuario();
+        }
+
+        private void CargarUsuario()
+        {
+            lblnombre.Text = UserLoginCache.Nombre;
+            lblapellidos.Text = UserLoginCache.ApellidoPaterno + " " + UserLoginCache.ApellidoMaterno;
+            lblemail.Text = UserLoginCache.Email;
+            lnlPuesto.Text = UserLoginCache.Puesto;
+        }
+
         private void panFormularios_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();

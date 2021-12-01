@@ -34,26 +34,33 @@
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panMenu = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.picLogotipo = new System.Windows.Forms.PictureBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panFormularios = new System.Windows.Forms.Panel();
             this.lblSubtitulo = new System.Windows.Forms.Label();
             this.lblBiblioTecos = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picLogotipo = new System.Windows.Forms.PictureBox();
+            this.lnlPuesto = new System.Windows.Forms.Label();
+            this.lblnombre = new System.Windows.Forms.Label();
+            this.lblapellidos = new System.Windows.Forms.Label();
+            this.lblemail = new System.Windows.Forms.Label();
             this.panCintillo.SuspendLayout();
             this.panMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogotipo)).BeginInit();
             this.panFormularios.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogotipo)).BeginInit();
             this.SuspendLayout();
             // 
             // panCintillo
             // 
-            this.panCintillo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.panCintillo.BackColor = System.Drawing.Color.DimGray;
             this.panCintillo.Controls.Add(this.btnMaximizar);
             this.panCintillo.Controls.Add(this.btnMinimizar);
             this.panCintillo.Controls.Add(this.btnCerrar);
@@ -112,7 +119,7 @@
             // panMenu
             // 
             this.panMenu.AutoScroll = true;
-            this.panMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panMenu.BackColor = System.Drawing.Color.DimGray;
             this.panMenu.Controls.Add(this.button6);
             this.panMenu.Controls.Add(this.button5);
             this.panMenu.Controls.Add(this.button4);
@@ -128,28 +135,70 @@
             this.panMenu.TabIndex = 1;
             this.panMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panMenu_MouseDown);
             // 
-            // panel1
+            // button6
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 150);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 152);
-            this.panel1.TabIndex = 1;
+            this.button6.BackColor = System.Drawing.Color.DimGray;
+            this.button6.Location = new System.Drawing.Point(47, 474);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(226, 60);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "Vender";
+            this.button6.UseVisualStyleBackColor = false;
             // 
-            // picLogotipo
+            // button5
             // 
-            this.picLogotipo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picLogotipo.Image = global::Proyecto.Properties.Resources.icons8_game_64__1_;
-            this.picLogotipo.Location = new System.Drawing.Point(0, 0);
-            this.picLogotipo.Name = "picLogotipo";
-            this.picLogotipo.Size = new System.Drawing.Size(300, 150);
-            this.picLogotipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogotipo.TabIndex = 0;
-            this.picLogotipo.TabStop = false;
+            this.button5.BackColor = System.Drawing.Color.DimGray;
+            this.button5.Location = new System.Drawing.Point(47, 707);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(226, 60);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Producto";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.DimGray;
+            this.button4.Location = new System.Drawing.Point(47, 627);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(226, 60);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Proveedor";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DimGray;
+            this.button3.Location = new System.Drawing.Point(47, 398);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(226, 60);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Cliente";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DimGray;
+            this.button2.Location = new System.Drawing.Point(47, 551);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(226, 60);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Graficas";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.Location = new System.Drawing.Point(47, 319);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(226, 60);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Empleados";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panFormularios
             // 
-            this.panFormularios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.panFormularios.BackColor = System.Drawing.Color.Gray;
             this.panFormularios.Controls.Add(this.lblSubtitulo);
             this.panFormularios.Controls.Add(this.lblBiblioTecos);
             this.panFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -163,8 +212,9 @@
             // 
             this.lblSubtitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSubtitulo.AutoSize = true;
+            this.lblSubtitulo.BackColor = System.Drawing.Color.Gray;
             this.lblSubtitulo.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(146)))), ((int)(((byte)(94)))));
+            this.lblSubtitulo.ForeColor = System.Drawing.Color.White;
             this.lblSubtitulo.Location = new System.Drawing.Point(307, 457);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.Size = new System.Drawing.Size(708, 49);
@@ -175,74 +225,89 @@
             // 
             this.lblBiblioTecos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblBiblioTecos.AutoSize = true;
+            this.lblBiblioTecos.BackColor = System.Drawing.Color.Gray;
             this.lblBiblioTecos.Font = new System.Drawing.Font("Century Gothic", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBiblioTecos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(146)))), ((int)(((byte)(94)))));
+            this.lblBiblioTecos.ForeColor = System.Drawing.Color.White;
             this.lblBiblioTecos.Location = new System.Drawing.Point(330, 302);
             this.lblBiblioTecos.Name = "lblBiblioTecos";
             this.lblBiblioTecos.Size = new System.Drawing.Size(726, 142);
             this.lblBiblioTecos.TabIndex = 2;
             this.lblBiblioTecos.Text = "GameTeca";
             // 
-            // button1
+            // panel1
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.Location = new System.Drawing.Point(47, 319);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 60);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Empleados";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.lblemail);
+            this.panel1.Controls.Add(this.lblapellidos);
+            this.panel1.Controls.Add(this.lblnombre);
+            this.panel1.Controls.Add(this.lnlPuesto);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 150);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 152);
+            this.panel1.TabIndex = 1;
             // 
-            // button2
+            // pictureBox1
             // 
-            this.button2.BackColor = System.Drawing.Color.DimGray;
-            this.button2.Location = new System.Drawing.Point(47, 551);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(226, 60);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Graficas";
-            this.button2.UseVisualStyleBackColor = false;
+            this.pictureBox1.Image = global::Proyecto.Properties.Resources.account;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(105, 115);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // button3
+            // picLogotipo
             // 
-            this.button3.BackColor = System.Drawing.Color.DimGray;
-            this.button3.Location = new System.Drawing.Point(47, 398);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(226, 60);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Cliente";
-            this.button3.UseVisualStyleBackColor = false;
+            this.picLogotipo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picLogotipo.Image = global::Proyecto.Properties.Resources.icons8_game_64__1_;
+            this.picLogotipo.Location = new System.Drawing.Point(0, 0);
+            this.picLogotipo.Name = "picLogotipo";
+            this.picLogotipo.Size = new System.Drawing.Size(300, 150);
+            this.picLogotipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogotipo.TabIndex = 0;
+            this.picLogotipo.TabStop = false;
             // 
-            // button4
+            // lnlPuesto
             // 
-            this.button4.BackColor = System.Drawing.Color.DimGray;
-            this.button4.Location = new System.Drawing.Point(47, 627);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(226, 60);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Proveedor";
-            this.button4.UseVisualStyleBackColor = false;
+            this.lnlPuesto.AutoSize = true;
+            this.lnlPuesto.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnlPuesto.Location = new System.Drawing.Point(119, 18);
+            this.lnlPuesto.Name = "lnlPuesto";
+            this.lnlPuesto.Size = new System.Drawing.Size(66, 20);
+            this.lnlPuesto.TabIndex = 1;
+            this.lnlPuesto.Text = "Puesto";
             // 
-            // button5
+            // lblnombre
             // 
-            this.button5.BackColor = System.Drawing.Color.DimGray;
-            this.button5.Location = new System.Drawing.Point(47, 707);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(226, 60);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Producto";
-            this.button5.UseVisualStyleBackColor = false;
+            this.lblnombre.AutoSize = true;
+            this.lblnombre.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnombre.Location = new System.Drawing.Point(119, 47);
+            this.lblnombre.Name = "lblnombre";
+            this.lblnombre.Size = new System.Drawing.Size(85, 20);
+            this.lblnombre.TabIndex = 2;
+            this.lblnombre.Text = "Nombre:";
             // 
-            // button6
+            // lblapellidos
             // 
-            this.button6.BackColor = System.Drawing.Color.DimGray;
-            this.button6.Location = new System.Drawing.Point(47, 474);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(226, 60);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Vender";
-            this.button6.UseVisualStyleBackColor = false;
+            this.lblapellidos.AutoSize = true;
+            this.lblapellidos.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblapellidos.Location = new System.Drawing.Point(119, 67);
+            this.lblapellidos.Name = "lblapellidos";
+            this.lblapellidos.Size = new System.Drawing.Size(85, 20);
+            this.lblapellidos.TabIndex = 3;
+            this.lblapellidos.Text = "apellidos";
+            // 
+            // lblemail
+            // 
+            this.lblemail.AutoSize = true;
+            this.lblemail.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblemail.Location = new System.Drawing.Point(119, 97);
+            this.lblemail.Name = "lblemail";
+            this.lblemail.Size = new System.Drawing.Size(65, 20);
+            this.lblemail.TabIndex = 4;
+            this.lblemail.Text = "Email:";
             // 
             // frmMenuPrincipal
             // 
@@ -258,11 +323,15 @@
             this.Name = "frmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMenuPrincipal";
+            this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.panCintillo.ResumeLayout(false);
             this.panMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogotipo)).EndInit();
             this.panFormularios.ResumeLayout(false);
             this.panFormularios.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogotipo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -276,8 +345,6 @@
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.PictureBox picLogotipo;
 
-        private System.Windows.Forms.Panel panel1;
-
         private System.Windows.Forms.Label lblBiblioTecos;
 
         private System.Windows.Forms.Label lblSubtitulo;
@@ -288,5 +355,11 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblemail;
+        private System.Windows.Forms.Label lblapellidos;
+        private System.Windows.Forms.Label lblnombre;
+        private System.Windows.Forms.Label lnlPuesto;
     }
 }

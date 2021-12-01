@@ -14,8 +14,9 @@ namespace Proyecto
         public DateTime endDate { get; private set; }
         public List<SalesListing> salesListing { get; private set; }
         public List<NetSalesByPeriod> netSalesByPeriod { get; private set; }
-        public List<MejoresProductos> mejoresPorductos { get; private set; }
+        public List<MejoresProductos> listamejoresPorductos { get; private set; }
         public double totalNetSales { get; private set; }
+        public double total { get; private set; }
 
         //Methods
         public void createSalesOrderReport(DateTime fromDate, DateTime toDate)
@@ -110,12 +111,56 @@ namespace Proyecto
             }
         }
 
-        public void createReporteProdcutosMasVendidos(DateTime fromDate, DateTime toDate)
+        public void createReporteProdcutosMasVendidos(DateTime fromDate, DateTime toDate,int rango)
         {
             reportDate = DateTime.Now;
             startDate = fromDate;
             endDate = toDate;
-            mejoresPorductos = new List(Of BestProducts)()
+            listamejoresPorductos = new List<MejoresProductos>();
+            var ordenDao = new ProductosMasVendidos();
+            var resultTable = ordenDao.getMejoresVentas(fromDate,toDate,rango);
+            foreach (System.Data.DataRow rows in resultTable.Rows)
+            {
+                var mejoresProductos = new MejoresProductos()
+                {
+                    ProductId = Convert.ToInt32(rows[0]),
+                    PorductName = Convert.ToString(rows[1]),
+                    Price = Convert.ToDouble(rows[2]),
+                    Quantity = Convert.ToInt32(rows[3]),
+                    Amount = Convert.ToDouble(rows[4])
+                };
+                listamejoresPorductos.Add(mejoresProductos);
+
+                //calculate total net sales
+                total += Convert.ToDouble(rows[4]);
+            }
+
+        }
+
+        public void createReporteProdcutosMenosVendidos(DateTime fromDate, DateTime toDate, int rango)
+        {
+            reportDate = DateTime.Now;
+            startDate = fromDate;
+            endDate = toDate;
+            listamejoresPorductos = new List<MejoresProductos>();
+            var ordenDao = new ProductosMasVendidos();
+            var resultTable = ordenDao.getPeoresVentas(fromDate, toDate, rango);
+            foreach (System.Data.DataRow rows in resultTable.Rows)
+            {
+                var mejoresProductos = new MejoresProductos()
+                {
+                    ProductId = Convert.ToInt32(rows[0]),
+                    PorductName = Convert.ToString(rows[1]),
+                    Price = Convert.ToDouble(rows[2]),
+                    Quantity = Convert.ToInt32(rows[3]),
+                    Amount = Convert.ToDouble(rows[4])
+                };
+                listamejoresPorductos.Add(mejoresProductos);
+
+                //calculate total net sales
+                total += Convert.ToDouble(rows[4]);
+            }
+
         }
     }
 }
