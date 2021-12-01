@@ -67,5 +67,17 @@ namespace Proyecto
             var toDate = DateTime.Now;
             getSalesReport(fromDate, toDate);
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var fromDate = dtmInicio.Value;
+            var toDate = dtmFin.Value;
+            getSalesReport(fromDate, new DateTime(toDate.Year, toDate.Month, toDate.Day, 23, 59, 59));
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
+
+using MySql.Data.MySqlClient;
 
 namespace Proyecto
 {
@@ -12,11 +13,11 @@ namespace Proyecto
         private readonly string connectionString;
         public Conexion()
         {
-            connectionString = "Server=SIGMA;DataBase=gameteca; integrated security = true";
+            connectionString = "server=192.254.224.20;port=3306;DataBase=gamineca_gameteca; User=gamineca_admin; password=admin";
         }
-        protected SqlConnection GetConnection()
+        protected MySqlConnection GetConnection()
         {
-            return new SqlConnection(connectionString);
+            return new MySqlConnection(connectionString);
         }
     }
 }

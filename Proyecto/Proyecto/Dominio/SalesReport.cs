@@ -45,7 +45,7 @@ namespace Proyecto
                 totalNetSales += Convert.ToDouble(rows[4]);
             }
             //create net sales by period
-            ////create temp list net sales by date
+            //create temp list net sales by date
             var listSalesByDate = (from sales in salesListing
                                    group sales by sales.orderDate
                        into listSales
