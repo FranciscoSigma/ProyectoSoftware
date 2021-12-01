@@ -38,6 +38,11 @@
             this.txtBuscarIDArticulo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgEmpleados = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDvENTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idarticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inventario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscarIDVentaArticulo = new System.Windows.Forms.TextBox();
             this.lblBuscarEstudiante = new System.Windows.Forms.Label();
             this.grpDatosEmpleado = new System.Windows.Forms.GroupBox();
@@ -59,6 +64,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
+            this.dtmFecha = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,12 +73,6 @@
             this.btneliminarVenta = new System.Windows.Forms.Button();
             this.btnModificarVetna = new System.Windows.Forms.Button();
             this.btnAgregarVenta = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDvENTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idarticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Inventario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtmFecha = new System.Windows.Forms.DateTimePicker();
             this.grpRegistrosProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleados)).BeginInit();
             this.grpDatosEmpleado.SuspendLayout();
@@ -183,6 +183,41 @@
             this.dtgEmpleados.RowTemplate.Height = 24;
             this.dtgEmpleados.Size = new System.Drawing.Size(1346, 267);
             this.dtgEmpleados.TabIndex = 10;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID Venta Articulo";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // IDvENTA
+            // 
+            this.IDvENTA.HeaderText = "Id Venta";
+            this.IDvENTA.MinimumWidth = 6;
+            this.IDvENTA.Name = "IDvENTA";
+            this.IDvENTA.ReadOnly = true;
+            // 
+            // idarticulo
+            // 
+            this.idarticulo.HeaderText = "ID Articulo";
+            this.idarticulo.MinimumWidth = 6;
+            this.idarticulo.Name = "idarticulo";
+            this.idarticulo.ReadOnly = true;
+            // 
+            // Inventario
+            // 
+            this.Inventario.HeaderText = "Cantidad";
+            this.Inventario.MinimumWidth = 6;
+            this.Inventario.Name = "Inventario";
+            this.Inventario.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
             // 
             // txtBuscarIDVentaArticulo
             // 
@@ -496,6 +531,14 @@
             this.txtIdCliente.Size = new System.Drawing.Size(231, 30);
             this.txtIdCliente.TabIndex = 14;
             // 
+            // dtmFecha
+            // 
+            this.dtmFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmFecha.Location = new System.Drawing.Point(140, 53);
+            this.dtmFecha.Name = "dtmFecha";
+            this.dtmFecha.Size = new System.Drawing.Size(200, 34);
+            this.dtmFecha.TabIndex = 17;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -614,49 +657,6 @@
             this.btnAgregarVenta.TabIndex = 0;
             this.btnAgregarVenta.Text = "Agregar";
             this.btnAgregarVenta.UseVisualStyleBackColor = false;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID Venta Articulo";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // IDvENTA
-            // 
-            this.IDvENTA.HeaderText = "Id Venta";
-            this.IDvENTA.MinimumWidth = 6;
-            this.IDvENTA.Name = "IDvENTA";
-            this.IDvENTA.ReadOnly = true;
-            // 
-            // idarticulo
-            // 
-            this.idarticulo.HeaderText = "ID Articulo";
-            this.idarticulo.MinimumWidth = 6;
-            this.idarticulo.Name = "idarticulo";
-            this.idarticulo.ReadOnly = true;
-            // 
-            // Inventario
-            // 
-            this.Inventario.HeaderText = "Cantidad";
-            this.Inventario.MinimumWidth = 6;
-            this.Inventario.Name = "Inventario";
-            this.Inventario.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // dtmFecha
-            // 
-            this.dtmFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmFecha.Location = new System.Drawing.Point(140, 53);
-            this.dtmFecha.Name = "dtmFecha";
-            this.dtmFecha.Size = new System.Drawing.Size(200, 34);
-            this.dtmFecha.TabIndex = 17;
             // 
             // frmVenta
             // 

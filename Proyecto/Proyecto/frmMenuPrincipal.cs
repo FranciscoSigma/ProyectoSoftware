@@ -127,23 +127,7 @@ namespace Proyecto
            
         }
 
-        private void OcultarSubMenu()
-        {
 
-        }
-
-        private void MostrarSubMenu(Panel subMenu)
-        {
-            if (subMenu.Visible == false)
-            {
-                OcultarSubMenu();
-                subMenu.Visible = true;
-            }
-            else
-            {
-                subMenu.Visible = false;
-            }
-        }
 
         private void AbrirFomulario(Form frmFormulario)
         {
@@ -169,34 +153,6 @@ namespace Proyecto
             PersonalizarDiseno();
         }
 
-        private void btnBaseDatos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEstudiantes_Click(object sender, EventArgs e)
-        {
-            OcultarSubMenu();
-
-        }
-
-        private void btnEmpleados_Click(object sender, EventArgs e)
-        {
-            OcultarSubMenu();
-
-        }
-
-        private void btnLibros_Click(object sender, EventArgs e)
-        {
-            OcultarSubMenu();
-
-        }
-
-        private void btnPrestamos_Click(object sender, EventArgs e)
-        {
-            OcultarSubMenu();
-
-        }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -219,11 +175,6 @@ namespace Proyecto
             this.Hide();
             Form miFormulario = new Login();
             miFormulario.ShowDialog();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            OcultarSubMenu();
         }
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
@@ -251,6 +202,36 @@ namespace Proyecto
             if (MessageBox.Show("¿Estas seguro de cerrar sesión?", "Advertencia",
            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 this.Close();
+        }
+
+        private void btnEmpelados_Click(object sender, EventArgs e)
+        {
+            AbrirFomulario(new frmEmpleadosAdministrador());
+        }
+
+        private void btncliente_Click(object sender, EventArgs e)
+        {
+            AbrirFomulario(new frmCliente());
+        }
+
+        private void btnVender_Click(object sender, EventArgs e)
+        {
+            AbrirFomulario(new frmVenta());
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            AbrirFomulario(new frmProducto());
+        }
+
+        private void btnProductosMasVendiso_Click(object sender, EventArgs e)
+        {
+            AbrirFomulario(new ProductoMasVendido());
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            AbrirFomulario(new ReportePeriodo());
         }
 
         private void panFormularios_MouseDown(object sender, MouseEventArgs e)

@@ -153,3 +153,6 @@ C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\bin\Debug\Sys
 C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\bin\Debug\MySql.Data.xml
 C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Proyecto.exe.config
 C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Proyecto.ProductoMasVendido.resources
+C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Proyecto.frmCliente.resources
+C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Proyecto.frmVenta.resources
+C:\Users\franc\Documents\GitHub\ProyectoSoftware\Proyecto\Proyecto\obj\Debug\Proyecto.frmProducto.resources
