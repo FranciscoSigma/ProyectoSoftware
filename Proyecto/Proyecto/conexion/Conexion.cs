@@ -532,12 +532,12 @@ namespace Proyecto
         {
             dtg.Rows.Clear();
             abrirConexion();
-            MySqlCommand cmd = new MySqlCommand("select * from Venta", cnn);
+            MySqlCommand cmd = new MySqlCommand("select * from Venta inner join cliente on cliente.id_cliente = Venta.id_cliente", cnn);
             MySqlDataReader consultar;
             consultar = cmd.ExecuteReader();
             while (consultar.Read())
             {
-                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetInt32(1), consultar.GetDateTime(2));
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetString(4), consultar.GetString(5), consultar.GetString(6), consultar.GetDateTime(2));
             }
             cerrarConexion();
             return dtg;
@@ -618,13 +618,13 @@ namespace Proyecto
         {
             dtg.Rows.Clear();
             abrirConexion();
-            string cmd = "select * from Venta where id_Venta like '%" + id_Venta + "%'";
+            string cmd = "select * from Venta inner join cliente on cliente.id_cliente = Venta.id_cliente where id_Venta like '%" + id_Venta + "%'";
             MySqlCommand query = new MySqlCommand(cmd, cnn);
             MySqlDataReader consultar;
             consultar = query.ExecuteReader();
             while (consultar.Read())
             {
-                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetInt32(1), consultar.GetDateTime(2));
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetString(4), consultar.GetString(5), consultar.GetString(6), consultar.GetDateTime(2));
             }
             cerrarConexion();
             return dtg;
@@ -637,12 +637,12 @@ namespace Proyecto
         {
             dtg.Rows.Clear();
             abrirConexion();
-            MySqlCommand cmd = new MySqlCommand("select * from Venta_Producto", cnn);
+            MySqlCommand cmd = new MySqlCommand("select * from Venta_Producto inner join producto on producto.id_Articulo = Venta_Producto.id_Articulo", cnn);
             MySqlDataReader consultar;
             consultar = cmd.ExecuteReader();
             while (consultar.Read())
             {
-                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetInt32(1), consultar.GetInt32(2),consultar.GetInt32(3),consultar.GetDecimal(4));
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetInt32(1), consultar.GetString(8),consultar.GetInt32(3),consultar.GetDecimal(4));
             }
             cerrarConexion();
             return dtg;
@@ -723,13 +723,13 @@ namespace Proyecto
         {
             dtg.Rows.Clear();
             abrirConexion();
-            string cmd = "select * from Venta_Producto where id_Venta_Producto like '%" + id_Venta_Producto + "%'";
+            string cmd = "select * from Venta_Producto inner join producto on producto.id_Articulo = Venta_Producto.id_Articulo where id_Venta_Producto like '%" + id_Venta_Producto + "%'";
             MySqlCommand query = new MySqlCommand(cmd, cnn);
             MySqlDataReader consultar;
             consultar = query.ExecuteReader();
             while (consultar.Read())
             {
-                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetInt32(1), consultar.GetInt32(2), consultar.GetInt32(3), consultar.GetDecimal(4));
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetInt32(1), consultar.GetString(8), consultar.GetInt32(3), consultar.GetDecimal(4));
             }
             cerrarConexion();
             return dtg;
