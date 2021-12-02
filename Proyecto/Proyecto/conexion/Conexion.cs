@@ -423,7 +423,7 @@ namespace Proyecto
         {
             dtg.Rows.Clear();
             abrirConexion();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM producto inner join categoria on categoria.id_categoria = producto.id_categoriao", cnn);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM producto inner join categoria on categoria.id_categoria = producto.id_categoria", cnn);
             MySqlDataReader consultar;
             consultar = cmd.ExecuteReader();
             while (consultar.Read())
@@ -630,6 +630,128 @@ namespace Proyecto
             return dtg;
         }
 
+        #endregion
+
+        #region venta Producto
+        public DataGridView MostrarVentaProducto(DataGridView dtg)
+        {
+            dtg.Rows.Clear();
+            abrirConexion();
+            MySqlCommand cmd = new MySqlCommand("select * from Venta_Producto", cnn);
+            MySqlDataReader consultar;
+            consultar = cmd.ExecuteReader();
+            while (consultar.Read())
+            {
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetInt32(1), consultar.GetInt32(2),consultar.GetInt32(3),consultar.GetDecimal(4));
+            }
+            cerrarConexion();
+            return dtg;
+        }
+
+        public bool InsertVentaProducto(VentaProducto v)
+        {
+            abrirConexion();
+            string cmd = "insert into Venta_Producto values(null," + v.id_Venta + ", " + v.id_Articulo + "." + v.cantidad + ", '" + v.precio + "'); ";
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+        public VentaProducto BuscarVentaProducto(int id_Venta_Producto)
+        {
+            abrirConexion();
+            string cmd = "select * from Venta_Producto where id_Venta_Producto = " + id_Venta_Producto;
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            MySqlDataReader consultar;
+            consultar = query.ExecuteReader();
+            VentaProducto v;
+            while (consultar.Read())
+            {
+                v = new VentaProducto(consultar.GetInt32(1), consultar.GetInt32(2), consultar.GetInt32(3), consultar.GetDecimal(4));
+                cerrarConexion();
+                return v;
+            }
+            cerrarConexion();
+            return null;
+        }
+
+        public bool updateVentaProducto(VentaProducto v, int id_Venta_Producto)
+        {
+            abrirConexion();
+            string cmd = ("update Venta_Producto set id_cliente = " + v.id_Venta + ",id_Articulo = '" + v.id_Articulo + ",cantidad = "+v.cantidad+", precio = "+v.precio+ " where id_Venta_Producto = " + id_Venta_Producto + "");
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+
+        public bool deleteVentaProducto(int id_Venta_Producto)
+        {
+            abrirConexion();
+            string cmd = "delete from Venta_Producto where id_Venta_Producto = " + id_Venta_Producto;
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+
+        public DataGridView MostrarVentaProductoBuscada(DataGridView dtg, int id_Venta_Producto)
+        {
+            dtg.Rows.Clear();
+            abrirConexion();
+            string cmd = "select * from Venta_Producto where id_Venta_Producto like '%" + id_Venta_Producto + "%'";
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            MySqlDataReader consultar;
+            consultar = query.ExecuteReader();
+            while (consultar.Read())
+            {
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetInt32(1), consultar.GetInt32(2), consultar.GetInt32(3), consultar.GetDecimal(4));
+            }
+            cerrarConexion();
+            return dtg;
+        }
+
+        #endregion
+
+        #region extras
+        public ComboBox Mostrarcategoriascombobox(ComboBox com)
+        {
+            com.Items.Clear();
+            abrirConexion();
+            MySqlCommand cmd = new MySqlCommand("select * from categoria", cnn);
+            MySqlDataReader consultar;
+            consultar = cmd.ExecuteReader();
+            while (consultar.Read())
+            {
+                com.Items.Add(consultar.GetString(1));
+            }
+            cerrarConexion();
+            return com;
+        }
         #endregion
     }
 }

@@ -37,7 +37,7 @@
             this.grpRegistrosProductos = new System.Windows.Forms.GroupBox();
             this.txtBuscarNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtgEmpleados = new System.Windows.Forms.DataGridView();
+            this.dtgProducto = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +48,7 @@
             this.lblBuscarEstudiante = new System.Windows.Forms.Label();
             this.grpDatosEmpleado = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.comCategoria = new System.Windows.Forms.ComboBox();
             this.txtInventario = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
@@ -67,9 +68,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtnombrecategoria = new System.Windows.Forms.TextBox();
+            this.txtdescripcioncategoria = new System.Windows.Forms.TextBox();
+            this.dtgcategoria = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,15 +78,14 @@
             this.btnDeleteCat = new System.Windows.Forms.Button();
             this.btnModCat = new System.Windows.Forms.Button();
             this.btnAgregarCategoria = new System.Windows.Forms.Button();
-            this.comCategoria = new System.Windows.Forms.ComboBox();
             this.grpRegistrosProductos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProducto)).BeginInit();
             this.grpDatosEmpleado.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.grpAcciones.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgcategoria)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,7 +96,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpRegistrosProductos.Controls.Add(this.txtBuscarNombre);
             this.grpRegistrosProductos.Controls.Add(this.label1);
-            this.grpRegistrosProductos.Controls.Add(this.dtgEmpleados);
+            this.grpRegistrosProductos.Controls.Add(this.dtgProducto);
             this.grpRegistrosProductos.Controls.Add(this.txtBuscarID);
             this.grpRegistrosProductos.Controls.Add(this.lblBuscarEstudiante);
             this.grpRegistrosProductos.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,17 +136,17 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Buscar producto (Nombre):";
             // 
-            // dtgEmpleados
+            // dtgProducto
             // 
-            this.dtgEmpleados.AllowUserToAddRows = false;
-            this.dtgEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dtgProducto.AllowUserToAddRows = false;
+            this.dtgProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgEmpleados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtgEmpleados.BackgroundColor = System.Drawing.Color.DimGray;
-            this.dtgEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgEmpleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dtgProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgProducto.BackgroundColor = System.Drawing.Color.DimGray;
+            this.dtgProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgProducto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -154,23 +154,23 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(146)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgEmpleados.ColumnHeadersHeight = 60;
-            this.dtgEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgProducto.ColumnHeadersHeight = 60;
+            this.dtgProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Categoria,
             this.Codigo,
             this.Nombre,
             this.Precio,
             this.Inventario});
-            this.dtgEmpleados.EnableHeadersVisualStyles = false;
-            this.dtgEmpleados.GridColor = System.Drawing.Color.DarkGray;
-            this.dtgEmpleados.Location = new System.Drawing.Point(19, 66);
-            this.dtgEmpleados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtgEmpleados.MultiSelect = false;
-            this.dtgEmpleados.Name = "dtgEmpleados";
-            this.dtgEmpleados.ReadOnly = true;
-            this.dtgEmpleados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dtgProducto.EnableHeadersVisualStyles = false;
+            this.dtgProducto.GridColor = System.Drawing.Color.DarkGray;
+            this.dtgProducto.Location = new System.Drawing.Point(19, 66);
+            this.dtgProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgProducto.MultiSelect = false;
+            this.dtgProducto.Name = "dtgProducto";
+            this.dtgProducto.ReadOnly = true;
+            this.dtgProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,17 +178,17 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgEmpleados.RowHeadersWidth = 60;
+            this.dtgProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgProducto.RowHeadersWidth = 60;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DimGray;
-            this.dtgEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dtgEmpleados.RowTemplate.Height = 24;
-            this.dtgEmpleados.Size = new System.Drawing.Size(1346, 267);
-            this.dtgEmpleados.TabIndex = 10;
+            this.dtgProducto.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgProducto.RowTemplate.Height = 24;
+            this.dtgProducto.Size = new System.Drawing.Size(1346, 267);
+            this.dtgProducto.TabIndex = 10;
             // 
             // ID
             // 
@@ -244,6 +244,7 @@
             this.txtBuscarID.Name = "txtBuscarID";
             this.txtBuscarID.Size = new System.Drawing.Size(153, 30);
             this.txtBuscarID.TabIndex = 7;
+            this.txtBuscarID.TextChanged += new System.EventHandler(this.txtBuscarID_TextChanged);
             // 
             // lblBuscarEstudiante
             // 
@@ -301,6 +302,15 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(382, 313);
             this.tableLayoutPanel2.TabIndex = 26;
+            // 
+            // comCategoria
+            // 
+            this.comCategoria.BackColor = System.Drawing.Color.DimGray;
+            this.comCategoria.FormattingEnabled = true;
+            this.comCategoria.Location = new System.Drawing.Point(136, 3);
+            this.comCategoria.Name = "comCategoria";
+            this.comCategoria.Size = new System.Drawing.Size(243, 35);
+            this.comCategoria.TabIndex = 28;
             // 
             // txtInventario
             // 
@@ -463,6 +473,7 @@
             this.btnEliminarProducto.TabIndex = 2;
             this.btnEliminarProducto.Text = "eliminar";
             this.btnEliminarProducto.UseVisualStyleBackColor = false;
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
             // 
             // btnModificarProducto
             // 
@@ -473,6 +484,7 @@
             this.btnModificarProducto.TabIndex = 1;
             this.btnModificarProducto.Text = "modificar";
             this.btnModificarProducto.UseVisualStyleBackColor = false;
+            this.btnModificarProducto.Click += new System.EventHandler(this.btnModificarProducto_Click);
             // 
             // btnAgregarProducto
             // 
@@ -483,6 +495,7 @@
             this.btnAgregarProducto.TabIndex = 0;
             this.btnAgregarProducto.Text = "Agregar";
             this.btnAgregarProducto.UseVisualStyleBackColor = false;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // groupBox1
             // 
@@ -492,7 +505,7 @@
             this.groupBox1.Controls.Add(this.txtBuscarCategoriaID);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dtgcategoria);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Silver;
             this.groupBox1.Location = new System.Drawing.Point(655, 11);
@@ -517,6 +530,7 @@
             this.txtBuscarCategoriaID.Name = "txtBuscarCategoriaID";
             this.txtBuscarCategoriaID.Size = new System.Drawing.Size(182, 30);
             this.txtBuscarCategoriaID.TabIndex = 14;
+            this.txtBuscarCategoriaID.TextChanged += new System.EventHandler(this.txtBuscarCategoriaID_TextChanged);
             // 
             // label4
             // 
@@ -538,8 +552,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.33F));
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtnombrecategoria, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtdescripcioncategoria, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 36);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -578,47 +592,47 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Descripcion";
             // 
-            // textBox1
+            // txtnombrecategoria
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtnombrecategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.DarkGray;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.Location = new System.Drawing.Point(140, 2);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(231, 30);
-            this.textBox1.TabIndex = 14;
+            this.txtnombrecategoria.BackColor = System.Drawing.Color.DarkGray;
+            this.txtnombrecategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnombrecategoria.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnombrecategoria.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtnombrecategoria.Location = new System.Drawing.Point(140, 2);
+            this.txtnombrecategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtnombrecategoria.Name = "txtnombrecategoria";
+            this.txtnombrecategoria.Size = new System.Drawing.Size(231, 30);
+            this.txtnombrecategoria.TabIndex = 14;
             // 
-            // textBox2
+            // txtdescripcioncategoria
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtdescripcioncategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BackColor = System.Drawing.Color.DarkGray;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox2.Location = new System.Drawing.Point(140, 52);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(231, 30);
-            this.textBox2.TabIndex = 15;
+            this.txtdescripcioncategoria.BackColor = System.Drawing.Color.DarkGray;
+            this.txtdescripcioncategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtdescripcioncategoria.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdescripcioncategoria.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtdescripcioncategoria.Location = new System.Drawing.Point(140, 52);
+            this.txtdescripcioncategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtdescripcioncategoria.Name = "txtdescripcioncategoria";
+            this.txtdescripcioncategoria.Size = new System.Drawing.Size(231, 30);
+            this.txtdescripcioncategoria.TabIndex = 15;
             // 
-            // dataGridView1
+            // dtgcategoria
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dtgcategoria.AllowUserToAddRows = false;
+            this.dtgcategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.DimGray;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dtgcategoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgcategoria.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgcategoria.BackgroundColor = System.Drawing.Color.DimGray;
+            this.dtgcategoria.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgcategoria.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -626,20 +640,20 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(146)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.ColumnHeadersHeight = 60;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgcategoria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgcategoria.ColumnHeadersHeight = 60;
+            this.dtgcategoria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn6});
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.DarkGray;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 186);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dtgcategoria.EnableHeadersVisualStyles = false;
+            this.dtgcategoria.GridColor = System.Drawing.Color.DarkGray;
+            this.dtgcategoria.Location = new System.Drawing.Point(6, 186);
+            this.dtgcategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgcategoria.MultiSelect = false;
+            this.dtgcategoria.Name = "dtgcategoria";
+            this.dtgcategoria.ReadOnly = true;
+            this.dtgcategoria.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -647,17 +661,17 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.RowHeadersWidth = 60;
+            this.dtgcategoria.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgcategoria.RowHeadersWidth = 60;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.DimGray;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(489, 163);
-            this.dataGridView1.TabIndex = 13;
+            this.dtgcategoria.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dtgcategoria.RowTemplate.Height = 24;
+            this.dtgcategoria.Size = new System.Drawing.Size(489, 163);
+            this.dtgcategoria.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -706,6 +720,7 @@
             this.btnDeleteCat.TabIndex = 2;
             this.btnDeleteCat.Text = "eliminar";
             this.btnDeleteCat.UseVisualStyleBackColor = false;
+            this.btnDeleteCat.Click += new System.EventHandler(this.btnDeleteCat_Click);
             // 
             // btnModCat
             // 
@@ -716,6 +731,7 @@
             this.btnModCat.TabIndex = 1;
             this.btnModCat.Text = "modificar";
             this.btnModCat.UseVisualStyleBackColor = false;
+            this.btnModCat.Click += new System.EventHandler(this.btnModCat_Click);
             // 
             // btnAgregarCategoria
             // 
@@ -726,15 +742,7 @@
             this.btnAgregarCategoria.TabIndex = 0;
             this.btnAgregarCategoria.Text = "Agregar";
             this.btnAgregarCategoria.UseVisualStyleBackColor = false;
-            // 
-            // comCategoria
-            // 
-            this.comCategoria.BackColor = System.Drawing.Color.DimGray;
-            this.comCategoria.FormattingEnabled = true;
-            this.comCategoria.Location = new System.Drawing.Point(136, 3);
-            this.comCategoria.Name = "comCategoria";
-            this.comCategoria.Size = new System.Drawing.Size(243, 35);
-            this.comCategoria.TabIndex = 28;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
             // 
             // frmProducto
             // 
@@ -749,9 +757,10 @@
             this.DoubleBuffered = true;
             this.Name = "frmProducto";
             this.Text = "frmEmpleadosAdministrador";
+            this.Load += new System.EventHandler(this.frmProducto_Load);
             this.grpRegistrosProductos.ResumeLayout(false);
             this.grpRegistrosProductos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProducto)).EndInit();
             this.grpDatosEmpleado.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -760,7 +769,7 @@
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgcategoria)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -771,7 +780,7 @@
         private System.Windows.Forms.TextBox txtBuscarID;
         private System.Windows.Forms.Label lblBuscarEstudiante;
         private System.Windows.Forms.GroupBox grpDatosEmpleado;
-        private System.Windows.Forms.DataGridView dtgEmpleados;
+        private System.Windows.Forms.DataGridView dtgProducto;
         private System.Windows.Forms.GroupBox grpAcciones;
         private System.Windows.Forms.Button btnEliminarProducto;
         private System.Windows.Forms.Button btnModificarProducto;
@@ -800,9 +809,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtnombrecategoria;
+        private System.Windows.Forms.TextBox txtdescripcioncategoria;
+        private System.Windows.Forms.DataGridView dtgcategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
