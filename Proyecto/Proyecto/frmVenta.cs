@@ -28,32 +28,28 @@ namespace Proyecto
 
         private void btnAgregarVenta_Click(object sender, EventArgs e)
         {
-            venta v = new venta(int.Parse(txtIdCliente.Text),DateTime.Now);
+            venta v = new venta((cbocliente.SelectedIndex+1),DateTime.Now);
             if (mysql.InsertVenta(v))
             {
                 MessageBox.Show("venta agregado correctamente");
-                txtIdCliente.Text = "";
             }
             else
             {
                 MessageBox.Show("no se a podido agregar la venta");
-                txtIdCliente.Text = "";
             }
             dtgVenta = mysql.MostrarVenta(dtgVenta);
         }
 
         private void btnModificarVetna_Click(object sender, EventArgs e)
         {
-            venta v = new venta(int.Parse(txtIdCliente.Text), DateTime.Now);
+            venta v = new venta((cbocliente.SelectedIndex + 1), DateTime.Now);
             if (mysql.updateVenta(v, int.Parse(txtBuscarDatosVentaID.Text)))
             {
                 MessageBox.Show("venta modificado correctamente");
-                txtIdCliente.Text = "";
             }
             else
             {
                 MessageBox.Show("no se pudo modificar");
-                txtIdCliente.Text = "";
             }
             dtgVenta = mysql.MostrarVenta(dtgVenta);
         }
@@ -64,12 +60,10 @@ namespace Proyecto
             {
                 MessageBox.Show("venta dada de baja correctamente");
                 dtgVenta = mysql.MostrarVenta(dtgVenta);
-                txtIdCliente.Text = "";
             }
             else
                 MessageBox.Show("No se ha podiod eliminar los datos");
             dtgVenta = mysql.MostrarVenta(dtgVenta);
-            txtIdCliente.Text = "";
         }
         private void txtBuscarDatosVentaID_TextChanged(object sender, EventArgs e)
         {
@@ -82,32 +76,84 @@ namespace Proyecto
             }
             else
             {
-                txtIdCliente.Text = "";
                 dtgVenta = mysql.MostrarVenta(dtgVenta);
             }
             if (v != null)
             {
-                txtIdCliente.Text = v.id_cliente.ToString();                
+                cbocliente.SelectedIndex =v.id_cliente-1;              
             }
             else
             {
-                txtIdCliente.Text = "";
+                
             }
         }
 
         private void btnAgregarArticulo_Click(object sender, EventArgs e)
         {
-
+            producto p = mysql.BuscarProducto(int.Parse(txtidarticulo.Text));
+            VentaProducto xp = new VentaProducto(int.Parse(txtidventa.Text),int.Parse(txtidarticulo.Text),int.Parse(txtcantidad.Text),p.Precio);
+            if(xp.cantidad <= p.Inventario && xp.cantidad != 0)
+            {
+                if (mysql.InsertVentaProducto(xp))
+                {
+                    p.Inventario = p.Inventario - xp.cantidad;
+                    mysql.updateProducto(p, int.Parse(txtidarticulo.Text));
+                    MessageBox.Show("no se a podido agregar la venta");
+                }
+                else
+                {
+                    MessageBox.Show("no se a podido agregar la venta");
+                }
+            }
+            else
+            {
+                MessageBox.Show("La cantidad que se intenta vender es superior al inventario");
+            }
+            dtgVentaArticulo = mysql.MostrarVentaProducto(dtgVentaArticulo);
         }
 
         private void btnModificarArticulo_Click(object sender, EventArgs e)
         {
-
+            producto p = mysql.BuscarProducto(int.Parse(txtidarticulo.Text));
+            VentaProducto xp = new VentaProducto(int.Parse(txtidventa.Text), int.Parse(txtidarticulo.Text), int.Parse(txtcantidad.Text), p.Precio);
+            VentaProducto auxiliar = mysql.BuscarVentaProducto(int.Parse(txtBuscarIDVentaArticulo.Text));
+            int auxiliarinventario = p.Inventario;
+            p.Inventario = p.Inventario + auxiliar.cantidad;
+            if(xp.cantidad <= p.Inventario && xp.cantidad != 0)
+            {
+                if(mysql.updateVentaProducto(xp, int.Parse(txtBuscarIDVentaArticulo.Text)))
+                {
+                    p.Inventario = p.Inventario - xp.cantidad;
+                    mysql.updateProducto(p, int.Parse(txtidarticulo.Text));
+                    MessageBox.Show("venta modificado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("no se pudo modificar");
+                }
+            }
+            else
+            {
+                MessageBox.Show("La cantidad que se intenta vender es superior al inventario, no se modificara la compra");
+            }
+            dtgVentaArticulo = mysql.MostrarVentaProducto(dtgVentaArticulo);
         }
 
         private void btnEliminarArticulo_Click(object sender, EventArgs e)
         {
-
+            VentaProducto auxiliar = mysql.BuscarVentaProducto(int.Parse(txtBuscarIDVentaArticulo.Text));
+            producto p = mysql.BuscarProducto(int.Parse(txtidarticulo.Text));
+            if (mysql.deleteVentaProducto(int.Parse(txtBuscarIDVentaArticulo.Text)))
+            {
+                p.Inventario = p.Inventario + auxiliar.cantidad;
+                mysql.updateProducto(p, int.Parse(txtidarticulo.Text));
+                dtgVentaArticulo = mysql.MostrarVentaProducto(dtgVentaArticulo);
+                MessageBox.Show("venta dada de baja correctamente");
+                
+            }
+            else
+                MessageBox.Show("No se ha podiod eliminar los datos");
+            dtgVenta = mysql.MostrarVenta(dtgVenta);
         }
         private void txtBuscarIDVentaArticulo_TextChanged(object sender, EventArgs e)
         {
@@ -118,6 +164,8 @@ namespace Proyecto
         {
             dtgVenta = mysql.MostrarVenta(dtgVenta);
             dtgVentaArticulo = mysql.MostrarVentaProducto(dtgVentaArticulo);
+            cbocliente = mysql.MostrarClientecombobox(cbocliente);
+            cbocliente.SelectedIndex = 0;
         }
     }
 }

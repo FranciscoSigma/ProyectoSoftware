@@ -537,7 +537,7 @@ namespace Proyecto
             consultar = cmd.ExecuteReader();
             while (consultar.Read())
             {
-                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetString(4), consultar.GetString(5), consultar.GetString(6), consultar.GetDateTime(2));
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetString(4), consultar.GetString(5), consultar.GetString(6));
             }
             cerrarConexion();
             return dtg;
@@ -570,7 +570,7 @@ namespace Proyecto
             venta v;
             while (consultar.Read())
             {
-                v = new venta(consultar.GetInt32(1), consultar.GetDateTime(2));
+                v = new venta(consultar.GetInt32(1), DateTime.Today);
                 cerrarConexion();
                 return v;
             }
@@ -581,7 +581,7 @@ namespace Proyecto
         public bool updateVenta(venta v, int id_Venta)
         {
             abrirConexion();
-            string cmd = ("update Venta set id_cliente = '" + v.id_cliente + "',fecha_orden = '" + v.fecha_orden + " where id_Venta = "+id_Venta+"");
+            string cmd = ("update Venta set id_cliente = " + v.id_cliente  + " where id_Venta = "+id_Venta+"");
             MySqlCommand query = new MySqlCommand(cmd, cnn);
             int filas = query.ExecuteNonQuery();
             if (filas > 0)
@@ -624,7 +624,7 @@ namespace Proyecto
             consultar = query.ExecuteReader();
             while (consultar.Read())
             {
-                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetString(4), consultar.GetString(5), consultar.GetString(6), consultar.GetDateTime(2));
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetString(4), consultar.GetString(5), consultar.GetString(6));
             }
             cerrarConexion();
             return dtg;
@@ -748,6 +748,21 @@ namespace Proyecto
             while (consultar.Read())
             {
                 com.Items.Add(consultar.GetString(1));
+            }
+            cerrarConexion();
+            return com;
+        }
+
+        public ComboBox MostrarClientecombobox(ComboBox com)
+        {
+            com.Items.Clear();
+            abrirConexion();
+            MySqlCommand cmd = new MySqlCommand("select * from cliente", cnn);
+            MySqlDataReader consultar;
+            consultar = cmd.ExecuteReader();
+            while (consultar.Read())
+            {
+                com.Items.Add(consultar.GetString(1) + " " + consultar.GetString(2) + " " + consultar.GetString(3));
             }
             cerrarConexion();
             return com;

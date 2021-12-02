@@ -31,21 +31,21 @@ namespace Proyecto
             get { return can; }
             set { can = value; }
         }
+        private decimal asdasd;
 
-        private decimal pesos;
-
-        public decimal precio
+        public decimal dinero
         {
-            get { return pesos; }
-            set { pesos = value; }
+            get { return asdasd; }
+            set { asdasd = value; }
         }
 
-        public VentaProducto(int id_Venta, int id_Articulo, int cantidad, decimal precio)
+
+        public VentaProducto(int id_Venta, int id_Articulo, int cantidad, decimal dinero)
         {
             this.id_Venta = id_Venta;
             this.id_Articulo = id_Articulo;
             this.cantidad = cantidad;
-            this.precio = precio;
+            this.dinero = dinero;
         }
     }
 }

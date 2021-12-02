@@ -60,26 +60,23 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscarDatosVentaID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.dtgVenta = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btneliminarVenta = new System.Windows.Forms.Button();
             this.btnModificarVetna = new System.Windows.Forms.Button();
             this.btnAgregarVenta = new System.Windows.Forms.Button();
+            this.cbocliente = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Paterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpRegistrosProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgVentaArticulo)).BeginInit();
             this.grpDatosEmpleado.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.grpAcciones.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgVenta)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -431,9 +428,10 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cbocliente);
             this.groupBox1.Controls.Add(this.txtBuscarDatosVentaID);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Controls.Add(this.dtgVenta);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Silver;
@@ -454,7 +452,7 @@
             this.txtBuscarDatosVentaID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscarDatosVentaID.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarDatosVentaID.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtBuscarDatosVentaID.Location = new System.Drawing.Point(304, 94);
+            this.txtBuscarDatosVentaID.Location = new System.Drawing.Point(352, 85);
             this.txtBuscarDatosVentaID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscarDatosVentaID.Name = "txtBuscarDatosVentaID";
             this.txtBuscarDatosVentaID.Size = new System.Drawing.Size(182, 30);
@@ -473,51 +471,6 @@
             this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 13;
             this.label4.Text = "Buscar ID";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.67F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.33F));
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtIdCliente, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 33);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(374, 36);
-            this.tableLayoutPanel1.TabIndex = 28;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label3.Size = new System.Drawing.Size(131, 18);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "id cliente";
-            // 
-            // txtIdCliente
-            // 
-            this.txtIdCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdCliente.BackColor = System.Drawing.Color.DarkGray;
-            this.txtIdCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdCliente.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdCliente.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtIdCliente.Location = new System.Drawing.Point(140, 2);
-            this.txtIdCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.Size = new System.Drawing.Size(231, 30);
-            this.txtIdCliente.TabIndex = 14;
             // 
             // dtgVenta
             // 
@@ -543,8 +496,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn4,
             this.Paterno,
-            this.materno,
-            this.dataGridViewTextBoxColumn6});
+            this.materno});
             this.dtgVenta.EnableHeadersVisualStyles = false;
             this.dtgVenta.GridColor = System.Drawing.Color.DarkGray;
             this.dtgVenta.Location = new System.Drawing.Point(6, 147);
@@ -569,7 +521,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.DimGray;
             this.dtgVenta.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgVenta.RowTemplate.Height = 24;
-            this.dtgVenta.Size = new System.Drawing.Size(655, 202);
+            this.dtgVenta.Size = new System.Drawing.Size(545, 202);
             this.dtgVenta.TabIndex = 13;
             // 
             // groupBox2
@@ -622,6 +574,28 @@
             this.btnAgregarVenta.UseVisualStyleBackColor = false;
             this.btnAgregarVenta.Click += new System.EventHandler(this.btnAgregarVenta_Click);
             // 
+            // cbocliente
+            // 
+            this.cbocliente.BackColor = System.Drawing.Color.DimGray;
+            this.cbocliente.FormattingEnabled = true;
+            this.cbocliente.Location = new System.Drawing.Point(235, 34);
+            this.cbocliente.Name = "cbocliente";
+            this.cbocliente.Size = new System.Drawing.Size(299, 35);
+            this.cbocliente.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Gray;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(101, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 20);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Cliente";
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
@@ -654,14 +628,6 @@
             this.materno.ReadOnly = true;
             this.materno.Width = 145;
             // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Fecha";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 94;
-            // 
             // frmVenta
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -685,8 +651,6 @@
             this.grpAcciones.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgVenta)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -715,8 +679,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBuscarDatosVentaID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dtgVenta;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btneliminarVenta;
@@ -727,11 +689,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idarticulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Inventario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.TextBox txtIdCliente;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbocliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Paterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn materno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }
