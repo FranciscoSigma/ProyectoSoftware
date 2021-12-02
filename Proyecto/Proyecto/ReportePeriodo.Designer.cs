@@ -42,7 +42,6 @@ namespace Proyecto
             this.button6 = new System.Windows.Forms.Button();
             this.dtmFin = new System.Windows.Forms.DateTimePicker();
             this.dtmInicio = new System.Windows.Forms.DateTimePicker();
-            this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -75,7 +74,6 @@ namespace Proyecto
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.dtmFin);
             this.panel1.Controls.Add(this.dtmInicio);
-            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button4);
@@ -130,16 +128,6 @@ namespace Proyecto
             this.dtmInicio.Name = "dtmInicio";
             this.dtmInicio.Size = new System.Drawing.Size(118, 22);
             this.dtmInicio.TabIndex = 6;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(23, 257);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(171, 43);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "CUSTOM";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button1
             // 
@@ -245,6 +233,5 @@ namespace Proyecto
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.DateTimePicker dtmFin;
         private System.Windows.Forms.DateTimePicker dtmInicio;
-        private System.Windows.Forms.Button button5;
     }
 }

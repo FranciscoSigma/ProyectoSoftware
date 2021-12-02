@@ -58,19 +58,19 @@
             this.btnModificarArticulo = new System.Windows.Forms.Button();
             this.btnAgregarArticulo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbocliente = new System.Windows.Forms.ComboBox();
             this.txtBuscarDatosVentaID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtgVenta = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btneliminarVenta = new System.Windows.Forms.Button();
-            this.btnModificarVetna = new System.Windows.Forms.Button();
-            this.btnAgregarVenta = new System.Windows.Forms.Button();
-            this.cbocliente = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Paterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btneliminarVenta = new System.Windows.Forms.Button();
+            this.btnModificarVetna = new System.Windows.Forms.Button();
+            this.btnAgregarVenta = new System.Windows.Forms.Button();
             this.grpRegistrosProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgVentaArticulo)).BeginInit();
             this.grpDatosEmpleado.SuspendLayout();
@@ -292,10 +292,10 @@
             this.txtcantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcantidad.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcantidad.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtcantidad.Location = new System.Drawing.Point(128, 182);
+            this.txtcantidad.Location = new System.Drawing.Point(127, 182);
             this.txtcantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtcantidad.Name = "txtcantidad";
-            this.txtcantidad.Size = new System.Drawing.Size(227, 30);
+            this.txtcantidad.Size = new System.Drawing.Size(228, 30);
             this.txtcantidad.TabIndex = 17;
             // 
             // label9
@@ -309,7 +309,7 @@
             this.label9.Location = new System.Drawing.Point(3, 0);
             this.label9.Name = "label9";
             this.label9.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label9.Size = new System.Drawing.Size(119, 90);
+            this.label9.Size = new System.Drawing.Size(118, 90);
             this.label9.TabIndex = 2;
             this.label9.Text = "id venta";
             // 
@@ -322,10 +322,10 @@
             this.txtidventa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtidventa.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtidventa.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtidventa.Location = new System.Drawing.Point(128, 2);
+            this.txtidventa.Location = new System.Drawing.Point(127, 2);
             this.txtidventa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtidventa.Name = "txtidventa";
-            this.txtidventa.Size = new System.Drawing.Size(227, 30);
+            this.txtidventa.Size = new System.Drawing.Size(228, 30);
             this.txtidventa.TabIndex = 9;
             // 
             // label10
@@ -339,7 +339,7 @@
             this.label10.Location = new System.Drawing.Point(3, 90);
             this.label10.Name = "label10";
             this.label10.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label10.Size = new System.Drawing.Size(119, 90);
+            this.label10.Size = new System.Drawing.Size(118, 90);
             this.label10.TabIndex = 9;
             this.label10.Text = "id articulo";
             // 
@@ -354,7 +354,7 @@
             this.label11.Location = new System.Drawing.Point(3, 180);
             this.label11.Name = "label11";
             this.label11.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label11.Size = new System.Drawing.Size(119, 92);
+            this.label11.Size = new System.Drawing.Size(118, 92);
             this.label11.TabIndex = 10;
             this.label11.Text = "Cantidad";
             // 
@@ -367,10 +367,10 @@
             this.txtidarticulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtidarticulo.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtidarticulo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtidarticulo.Location = new System.Drawing.Point(128, 92);
+            this.txtidarticulo.Location = new System.Drawing.Point(127, 92);
             this.txtidarticulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtidarticulo.Name = "txtidarticulo";
-            this.txtidarticulo.Size = new System.Drawing.Size(227, 30);
+            this.txtidarticulo.Size = new System.Drawing.Size(228, 30);
             this.txtidarticulo.TabIndex = 15;
             // 
             // grpAcciones
@@ -444,6 +444,28 @@
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la venta";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Gray;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(101, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 20);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Cliente";
+            // 
+            // cbocliente
+            // 
+            this.cbocliente.BackColor = System.Drawing.Color.DimGray;
+            this.cbocliente.FormattingEnabled = true;
+            this.cbocliente.Location = new System.Drawing.Point(235, 34);
+            this.cbocliente.Name = "cbocliente";
+            this.cbocliente.Size = new System.Drawing.Size(299, 35);
+            this.cbocliente.TabIndex = 15;
             // 
             // txtBuscarDatosVentaID
             // 
@@ -524,6 +546,38 @@
             this.dtgVenta.Size = new System.Drawing.Size(545, 202);
             this.dtgVenta.TabIndex = 13;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 119;
+            // 
+            // Paterno
+            // 
+            this.Paterno.HeaderText = "Ap. Paterno";
+            this.Paterno.MinimumWidth = 6;
+            this.Paterno.Name = "Paterno";
+            this.Paterno.ReadOnly = true;
+            this.Paterno.Width = 138;
+            // 
+            // materno
+            // 
+            this.materno.HeaderText = "Ap. Materno";
+            this.materno.MinimumWidth = 6;
+            this.materno.Name = "materno";
+            this.materno.ReadOnly = true;
+            this.materno.Width = 145;
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -573,60 +627,6 @@
             this.btnAgregarVenta.Text = "Agregar";
             this.btnAgregarVenta.UseVisualStyleBackColor = false;
             this.btnAgregarVenta.Click += new System.EventHandler(this.btnAgregarVenta_Click);
-            // 
-            // cbocliente
-            // 
-            this.cbocliente.BackColor = System.Drawing.Color.DimGray;
-            this.cbocliente.FormattingEnabled = true;
-            this.cbocliente.Location = new System.Drawing.Point(235, 34);
-            this.cbocliente.Name = "cbocliente";
-            this.cbocliente.Size = new System.Drawing.Size(299, 35);
-            this.cbocliente.TabIndex = 15;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Gray;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(101, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 20);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Cliente";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 119;
-            // 
-            // Paterno
-            // 
-            this.Paterno.HeaderText = "Ap. Paterno";
-            this.Paterno.MinimumWidth = 6;
-            this.Paterno.Name = "Paterno";
-            this.Paterno.ReadOnly = true;
-            this.Paterno.Width = 138;
-            // 
-            // materno
-            // 
-            this.materno.HeaderText = "Ap. Materno";
-            this.materno.MinimumWidth = 6;
-            this.materno.Name = "materno";
-            this.materno.ReadOnly = true;
-            this.materno.Width = 145;
             // 
             // frmVenta
             // 

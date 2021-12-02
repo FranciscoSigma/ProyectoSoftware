@@ -651,7 +651,7 @@ namespace Proyecto
         public bool InsertVentaProducto(VentaProducto v)
         {
             abrirConexion();
-            string cmd = "insert into Venta_Producto values(null," + v.id_Venta + ", " + v.id_Articulo + "." + v.cantidad + ", '" + v.precio + "'); ";
+            string cmd = "insert into Venta_Producto values(null," + v.id_Venta + ", " + v.id_Articulo + "," + v.cantidad + ", " + v.dinero + "); ";
             MySqlCommand query = new MySqlCommand(cmd, cnn);
             int filas = query.ExecuteNonQuery();
             if (filas > 0)
@@ -686,7 +686,7 @@ namespace Proyecto
         public bool updateVentaProducto(VentaProducto v, int id_Venta_Producto)
         {
             abrirConexion();
-            string cmd = ("update Venta_Producto set id_cliente = " + v.id_Venta + ",id_Articulo = '" + v.id_Articulo + ",cantidad = "+v.cantidad+", precio = "+v.precio+ " where id_Venta_Producto = " + id_Venta_Producto + "");
+            string cmd = ("update Venta_Producto set id_Venta = " + v.id_Venta + ",id_Articulo = " + v.id_Articulo + ",cantidad = "+v.cantidad+", precio = "+v.dinero+ " where id_Venta_Producto = " + id_Venta_Producto + "");
             MySqlCommand query = new MySqlCommand(cmd, cnn);
             int filas = query.ExecuteNonQuery();
             if (filas > 0)

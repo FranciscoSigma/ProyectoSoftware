@@ -17,6 +17,10 @@ namespace Proyecto
         {
             InitializeComponent();
             dtgEmpleados = mysql.MostrarEmpleado(dtgEmpleados);
+            if (UserLoginCache.Puesto != "administrador")
+                grpAcciones.Enabled = false;
+            else
+                grpAcciones.Enabled = true;
         }
         private void limpiarcontrol()
         {

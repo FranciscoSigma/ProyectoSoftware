@@ -153,11 +153,32 @@ namespace Proyecto
             }
             else
                 MessageBox.Show("No se ha podiod eliminar los datos");
-            dtgVenta = mysql.MostrarVenta(dtgVenta);
+            dtgVentaArticulo = mysql.MostrarVentaProducto(dtgVentaArticulo);
         }
         private void txtBuscarIDVentaArticulo_TextChanged(object sender, EventArgs e)
         {
-
+            VentaProducto vp = null;
+            if (txtBuscarIDVentaArticulo.Text != "")
+            {
+                vp = mysql.BuscarVentaProducto(int.Parse(txtBuscarIDVentaArticulo.Text));
+                dtgVentaArticulo.Rows.Clear();
+                dtgVentaArticulo = mysql.MostrarVentaProductoBuscada(dtgVentaArticulo, int.Parse(txtBuscarIDVentaArticulo.Text));
+            }
+            else
+            {
+                limpiar();
+                dtgVentaArticulo = mysql.MostrarVentaProducto(dtgVentaArticulo);
+            }
+            if (vp != null)
+            {
+                txtidventa.Text = vp.id_Venta.ToString();
+                txtidarticulo.Text = vp.id_Articulo.ToString();
+                txtcantidad.Text = vp.cantidad.ToString();
+            }
+            else
+            {
+                limpiar();
+            }
         }
 
         private void frmVenta_Load(object sender, EventArgs e)

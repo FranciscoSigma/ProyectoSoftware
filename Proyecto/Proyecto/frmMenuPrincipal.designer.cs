@@ -41,7 +41,6 @@
             this.btnInventario = new System.Windows.Forms.Button();
             this.btnProductosMasVendiso = new System.Windows.Forms.Button();
             this.btncliente = new System.Windows.Forms.Button();
-            this.btnProveedor = new System.Windows.Forms.Button();
             this.btnEmpelados = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblemail = new System.Windows.Forms.Label();
@@ -129,7 +128,6 @@
             this.panMenu.Controls.Add(this.btnInventario);
             this.panMenu.Controls.Add(this.btnProductosMasVendiso);
             this.panMenu.Controls.Add(this.btncliente);
-            this.panMenu.Controls.Add(this.btnProveedor);
             this.panMenu.Controls.Add(this.btnEmpelados);
             this.panMenu.Controls.Add(this.panel1);
             this.panMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -215,16 +213,6 @@
             this.btncliente.Text = "Cliente";
             this.btncliente.UseVisualStyleBackColor = false;
             this.btncliente.Click += new System.EventHandler(this.btncliente_Click);
-            // 
-            // btnProveedor
-            // 
-            this.btnProveedor.BackColor = System.Drawing.Color.DimGray;
-            this.btnProveedor.Location = new System.Drawing.Point(39, 461);
-            this.btnProveedor.Name = "btnProveedor";
-            this.btnProveedor.Size = new System.Drawing.Size(226, 60);
-            this.btnProveedor.TabIndex = 8;
-            this.btnProveedor.Text = "Proveedor";
-            this.btnProveedor.UseVisualStyleBackColor = false;
             // 
             // btnEmpelados
             // 
@@ -381,7 +369,6 @@
         private System.Windows.Forms.Button btnMaximizar;
         private System.Windows.Forms.Button btnVender;
         private System.Windows.Forms.Button btnInventario;
-        private System.Windows.Forms.Button btnProveedor;
         private System.Windows.Forms.Button btncliente;
         private System.Windows.Forms.Button btnProductosMasVendiso;
         private System.Windows.Forms.Button btnEmpelados;
