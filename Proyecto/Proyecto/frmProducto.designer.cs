@@ -50,7 +50,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtInventario = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -78,6 +77,7 @@
             this.btnDeleteCat = new System.Windows.Forms.Button();
             this.btnModCat = new System.Windows.Forms.Button();
             this.btnAgregarCategoria = new System.Windows.Forms.Button();
+            this.comCategoria = new System.Windows.Forms.ComboBox();
             this.grpRegistrosProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleados)).BeginInit();
             this.grpDatosEmpleado.SuspendLayout();
@@ -281,9 +281,9 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel2.Controls.Add(this.comCategoria, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtInventario, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtCategoria, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtPrecio, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.label8, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.label9, 0, 1);
@@ -331,21 +331,6 @@
             this.label7.Size = new System.Drawing.Size(127, 62);
             this.label7.TabIndex = 1;
             this.label7.Text = "Categoria";
-            // 
-            // txtCategoria
-            // 
-            this.txtCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCategoria.BackColor = System.Drawing.Color.DarkGray;
-            this.txtCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCategoria.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoria.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtCategoria.Location = new System.Drawing.Point(136, 2);
-            this.txtCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(243, 30);
-            this.txtCategoria.TabIndex = 7;
             // 
             // txtPrecio
             // 
@@ -742,6 +727,15 @@
             this.btnAgregarCategoria.Text = "Agregar";
             this.btnAgregarCategoria.UseVisualStyleBackColor = false;
             // 
+            // comCategoria
+            // 
+            this.comCategoria.BackColor = System.Drawing.Color.DimGray;
+            this.comCategoria.FormattingEnabled = true;
+            this.comCategoria.Location = new System.Drawing.Point(136, 3);
+            this.comCategoria.Name = "comCategoria";
+            this.comCategoria.Size = new System.Drawing.Size(243, 35);
+            this.comCategoria.TabIndex = 28;
+            // 
             // frmProducto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -787,7 +781,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox txtInventario;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -817,5 +810,6 @@
         private System.Windows.Forms.Button btnDeleteCat;
         private System.Windows.Forms.Button btnModCat;
         private System.Windows.Forms.Button btnAgregarCategoria;
+        private System.Windows.Forms.ComboBox comCategoria;
     }
 }

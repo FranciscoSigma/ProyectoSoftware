@@ -367,7 +367,7 @@ namespace Proyecto
         public bool updatecategoria(Categoria c, int id_categoria)
         {
             abrirConexion();
-            string cmd = ("update categoria set nombre_categoria = '" + c.Nombre + "',descripcion_categoria = '" + c.Descripcion  + "; ");
+            string cmd = ("update categoria set nombre_categoria = '" + c.Nombre + "',descripcion_categoria = '" + c.Descripcion  + " where id_categoria = " + id_categoria + "; ");
             MySqlCommand query = new MySqlCommand(cmd, cnn);
             int filas = query.ExecuteNonQuery();
             if (filas > 0)
@@ -411,6 +411,220 @@ namespace Proyecto
             while (consultar.Read())
             {
                 dtg.Rows.Add(consultar.GetInt32(0), consultar.GetString(1), consultar.GetString(2));
+            }
+            cerrarConexion();
+            return dtg;
+        }
+
+        #endregion
+
+        #region producto
+        public DataGridView MostrarProducto(DataGridView dtg)
+        {
+            dtg.Rows.Clear();
+            abrirConexion();
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM producto inner join categoria on categoria.id_categoria = producto.id_categoriao", cnn);
+            MySqlDataReader consultar;
+            consultar = cmd.ExecuteReader();
+            while (consultar.Read())
+            {
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetString(7), consultar.GetString(2), consultar.GetString(3),
+                    consultar.GetDecimal(4),consultar.GetInt32(5));
+            }
+            cerrarConexion();
+            return dtg;
+        }
+
+        public bool InsertProducto(producto p)
+        {
+            abrirConexion();
+            string cmd = "insert into producto values(null," + p.id_categoria + ", '" + p.codigo + "', '" + p.Nombre + "'," + p.Precio + ","+p.Inventario+"); ";
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+        public producto BuscarProducto(int id_producto)
+        {
+            abrirConexion();
+            string cmd = "select * from producto where id_Articulo = " + id_producto;
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            MySqlDataReader consultar;
+            consultar = query.ExecuteReader();
+            producto p;
+            while (consultar.Read())
+            {
+                p = new producto(consultar.GetInt32(1), consultar.GetString(2), consultar.GetString(3),
+                    consultar.GetDecimal(4),consultar.GetInt32(5));
+                cerrarConexion();
+                return p;
+            }
+            cerrarConexion();
+            return null;
+        }
+
+        public bool updateProducto(producto p, int id_producto)
+        {
+            abrirConexion();
+            string cmd = ("update producto set id_categoria = " + p.id_categoria + ",codigo = '" + p.codigo +
+                "', nombre_articulo = '" + p.Nombre + "',precio_Articulo = " + p.Precio + ",inventario ="+p.Inventario+" where id_Articulo = " + id_producto + "; ");
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+
+        public bool deleteProducto(int id_producto)
+        {
+            abrirConexion();
+            string cmd = "delete from producto where id_Articulo = " + id_producto;
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+
+        public DataGridView MostrarProductoBuscado(DataGridView dtg, int id_producto)
+        {
+            dtg.Rows.Clear();
+            abrirConexion();
+            string cmd = "select * from producto where id_Articulo like '%" + id_producto + "%'";
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            MySqlDataReader consultar;
+            consultar = query.ExecuteReader();
+            while (consultar.Read())
+            {
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetInt32(1), consultar.GetString(2), consultar.GetString(3),
+                consultar.GetDecimal(4), consultar.GetInt32(5));
+            }
+            cerrarConexion();
+            return dtg;
+        }
+
+        #endregion
+
+        #region venta
+        public DataGridView MostrarVenta(DataGridView dtg)
+        {
+            dtg.Rows.Clear();
+            abrirConexion();
+            MySqlCommand cmd = new MySqlCommand("select * from Venta", cnn);
+            MySqlDataReader consultar;
+            consultar = cmd.ExecuteReader();
+            while (consultar.Read())
+            {
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetInt32(1), consultar.GetDateTime(2));
+            }
+            cerrarConexion();
+            return dtg;
+        }
+
+        public bool InsertVenta(venta v)
+        {
+            abrirConexion();
+            string cmd = "insert into Venta values(null,'" + v.id_cliente + "', '" + v.fecha_orden + "'); ";
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+        public venta BuscarVenta(int id_Venta)
+        {
+            abrirConexion();
+            string cmd = "select * from Venta where id_Venta = " + id_Venta;
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            MySqlDataReader consultar;
+            consultar = query.ExecuteReader();
+            venta v;
+            while (consultar.Read())
+            {
+                v = new venta(consultar.GetInt32(1), consultar.GetDateTime(2));
+                cerrarConexion();
+                return v;
+            }
+            cerrarConexion();
+            return null;
+        }
+
+        public bool updateVenta(venta v, int id_Venta)
+        {
+            abrirConexion();
+            string cmd = ("update Venta set id_cliente = '" + v.id_cliente + "',fecha_orden = '" + v.fecha_orden + " where id_Venta = "+id_Venta+"");
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+
+        public bool deleteVenta(int id_Venta)
+        {
+            abrirConexion();
+            string cmd = "delete from Venta where id_Venta = " + id_Venta;
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+
+        public DataGridView MostrarVentaBuscada(DataGridView dtg, int id_Venta)
+        {
+            dtg.Rows.Clear();
+            abrirConexion();
+            string cmd = "select * from Venta where id_Venta like '%" + id_Venta + "%'";
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            MySqlDataReader consultar;
+            consultar = query.ExecuteReader();
+            while (consultar.Read())
+            {
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetInt32(1), consultar.GetDateTime(2));
             }
             cerrarConexion();
             return dtg;

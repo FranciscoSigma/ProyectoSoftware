@@ -112,6 +112,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Dominio\NetSalesByPeriod.cs" />
+    <Compile Include="producto.cs" />
     <Compile Include="ProductoMasVendido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +130,7 @@
     <Compile Include="Dominio\SalesListing.cs" />
     <Compile Include="Dominio\SalesReport.cs" />
     <Compile Include="UserLoginCache.cs" />
+    <Compile Include="venta.cs" />
     <EmbeddedResource Include="frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
