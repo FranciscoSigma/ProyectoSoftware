@@ -27,48 +27,69 @@ namespace Proyecto
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Cliente c = new Cliente(txtNombre.Text,txtApellidoPaterno.Text,txtApellidoMaterno.Text,decimal.Parse(txtTelefono.Text));
-            if(mysql.InsertCliente(c))
+            try
             {
-                MessageBox.Show("Cliente agregado correctamente");
-                limpiar();
+                Cliente c = new Cliente(txtNombre.Text, txtApellidoPaterno.Text, txtApellidoMaterno.Text, decimal.Parse(txtTelefono.Text));
+                if (mysql.InsertCliente(c))
+                {
+                    MessageBox.Show("Cliente agregado correctamente");
+                    limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("no se a podido agregar el cliente");
+                    limpiar();
+                }
+                dtgEmpleados = mysql.MostrarCliente(dtgEmpleados);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("no se a podido agregar el cliente");
-                limpiar();
+                MessageBox.Show(ex.Message);
             }
-            dtgEmpleados = mysql.MostrarCliente(dtgEmpleados);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Cliente c = new Cliente(txtNombre.Text, txtApellidoPaterno.Text, txtApellidoMaterno.Text, decimal.Parse(txtTelefono.Text));
-            if (mysql.updateCliente(c, int.Parse(txtBuscarID.Text)))
+            try
             {
-                MessageBox.Show("cliente modificado correctamente");
-                limpiar();
+                Cliente c = new Cliente(txtNombre.Text, txtApellidoPaterno.Text, txtApellidoMaterno.Text, decimal.Parse(txtTelefono.Text));
+                if (mysql.updateCliente(c, int.Parse(txtBuscarID.Text)))
+                {
+                    MessageBox.Show("cliente modificado correctamente");
+                    limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("no se pudo modificar");
+                    limpiar();
+                }
+                dtgEmpleados = mysql.MostrarCliente(dtgEmpleados);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("no se pudo modificar");
-                limpiar();
+                MessageBox.Show(ex.Message);
             }
-            dtgEmpleados = mysql.MostrarCliente(dtgEmpleados);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (mysql.deleteCliente(int.Parse(txtBuscarID.Text)))
+            try
             {
-                MessageBox.Show("cliente dado de baja correctamente");
+                if (mysql.deleteCliente(int.Parse(txtBuscarID.Text)))
+                {
+                    MessageBox.Show("cliente dado de baja correctamente");
+                    dtgEmpleados = mysql.MostrarCliente(dtgEmpleados);
+                    limpiar();
+                }
+                else
+                    MessageBox.Show("No se ha podiod eliminar los datos");
                 dtgEmpleados = mysql.MostrarCliente(dtgEmpleados);
                 limpiar();
             }
-            else
-                MessageBox.Show("No se ha podiod eliminar los datos");
-            dtgEmpleados = mysql.MostrarCliente(dtgEmpleados);
-            limpiar();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void frmCliente_Load(object sender, EventArgs e)

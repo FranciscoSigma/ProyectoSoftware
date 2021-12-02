@@ -56,14 +56,21 @@ namespace Proyecto
 
         private void btneliminarVenta_Click(object sender, EventArgs e)
         {
-            if (mysql.deleteVenta(int.Parse(txtBuscarDatosVentaID.Text)))
+            try
             {
-                MessageBox.Show("venta dada de baja correctamente");
+                if (mysql.deleteVenta(int.Parse(txtBuscarDatosVentaID.Text)))
+                {
+                    MessageBox.Show("venta dada de baja correctamente");
+                    dtgVenta = mysql.MostrarVenta(dtgVenta);
+                }
+                else
+                    MessageBox.Show("No se ha podiod eliminar los datos");
                 dtgVenta = mysql.MostrarVenta(dtgVenta);
             }
-            else
-                MessageBox.Show("No se ha podiod eliminar los datos");
-            dtgVenta = mysql.MostrarVenta(dtgVenta);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void txtBuscarDatosVentaID_TextChanged(object sender, EventArgs e)
         {
@@ -141,19 +148,26 @@ namespace Proyecto
 
         private void btnEliminarArticulo_Click(object sender, EventArgs e)
         {
-            VentaProducto auxiliar = mysql.BuscarVentaProducto(int.Parse(txtBuscarIDVentaArticulo.Text));
-            producto p = mysql.BuscarProducto(int.Parse(txtidarticulo.Text));
-            if (mysql.deleteVentaProducto(int.Parse(txtBuscarIDVentaArticulo.Text)))
+            try
             {
-                p.Inventario = p.Inventario + auxiliar.cantidad;
-                mysql.updateProducto(p, int.Parse(txtidarticulo.Text));
+                VentaProducto auxiliar = mysql.BuscarVentaProducto(int.Parse(txtBuscarIDVentaArticulo.Text));
+                producto p = mysql.BuscarProducto(int.Parse(txtidarticulo.Text));
+                if (mysql.deleteVentaProducto(int.Parse(txtBuscarIDVentaArticulo.Text)))
+                {
+                    p.Inventario = p.Inventario + auxiliar.cantidad;
+                    mysql.updateProducto(p, int.Parse(txtidarticulo.Text));
+                    dtgVentaArticulo = mysql.MostrarVentaProducto(dtgVentaArticulo);
+                    MessageBox.Show("venta dada de baja correctamente");
+
+                }
+                else
+                    MessageBox.Show("No se ha podiod eliminar los datos");
                 dtgVentaArticulo = mysql.MostrarVentaProducto(dtgVentaArticulo);
-                MessageBox.Show("venta dada de baja correctamente");
-                
             }
-            else
-                MessageBox.Show("No se ha podiod eliminar los datos");
-            dtgVentaArticulo = mysql.MostrarVentaProducto(dtgVentaArticulo);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void txtBuscarIDVentaArticulo_TextChanged(object sender, EventArgs e)
         {

@@ -51,31 +51,45 @@ namespace Proyecto
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            producto p = new producto(comCategoria.SelectedIndex+1, txtcodigo.Text, txtNombre.Text, decimal.Parse(txtPrecio.Text),
+            try
+            {
+                producto p = new producto(comCategoria.SelectedIndex + 1, txtcodigo.Text, txtNombre.Text, decimal.Parse(txtPrecio.Text),
                 int.Parse(txtInventario.Text));
-            if (mysql.updateProducto(p, int.Parse(txtBuscarID.Text)))
-            {
-                MessageBox.Show("Producto modificado correctamente");
+                if (mysql.updateProducto(p, int.Parse(txtBuscarID.Text)))
+                {
+                    MessageBox.Show("Producto modificado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("no se pudo modificar el producto");
+                }
+                limpiarcontrolproducto();
+                dtgProducto = mysql.MostrarProducto(dtgProducto);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("no se pudo modificar el producto");
+                MessageBox.Show(ex.Message);
             }
-            limpiarcontrolproducto();
-            dtgProducto = mysql.MostrarProducto(dtgProducto);
         }
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
-            if (mysql.deleteProducto(int.Parse(txtBuscarID.Text)))
+            try
             {
-                MessageBox.Show("producto dado de baja correctamente");
+                if (mysql.deleteProducto(int.Parse(txtBuscarID.Text)))
+                {
+                    MessageBox.Show("producto dado de baja correctamente");
+                    dtgProducto = mysql.MostrarProducto(dtgProducto);
+                }
+                else
+                    MessageBox.Show("No se ha podiod eliminar los datos");
+                limpiarcontrolproducto();
                 dtgProducto = mysql.MostrarProducto(dtgProducto);
             }
-            else
-                MessageBox.Show("No se ha podiod eliminar los datos");
-            limpiarcontrolproducto();
-            dtgProducto = mysql.MostrarProducto(dtgProducto);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void txtBuscarID_TextChanged(object sender, EventArgs e)
@@ -141,16 +155,23 @@ namespace Proyecto
 
         private void btnDeleteCat_Click(object sender, EventArgs e)
         {
-            if (mysql.deleteCategoria(int.Parse(txtBuscarCategoriaID.Text)))
+            try
             {
-                MessageBox.Show("categoria dada de baja correctamente");
+                if (mysql.deleteCategoria(int.Parse(txtBuscarCategoriaID.Text)))
+                {
+                    MessageBox.Show("categoria dada de baja correctamente");
+                    dtgcategoria = mysql.MostrarCategoria(dtgcategoria);
+                }
+                else
+                    MessageBox.Show("No se ha podiod eliminar los datos");
+                limpiarcontrolcategoria();
                 dtgcategoria = mysql.MostrarCategoria(dtgcategoria);
+                comCategoria = mysql.Mostrarcategoriascombobox(comCategoria);
             }
-            else
-                MessageBox.Show("No se ha podiod eliminar los datos");
-            limpiarcontrolcategoria();
-            dtgcategoria = mysql.MostrarCategoria(dtgcategoria);
-            comCategoria = mysql.Mostrarcategoriascombobox(comCategoria);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void txtBuscarCategoriaID_TextChanged(object sender, EventArgs e)
