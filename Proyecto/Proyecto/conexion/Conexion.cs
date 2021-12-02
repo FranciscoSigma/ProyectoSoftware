@@ -367,7 +367,7 @@ namespace Proyecto
         public bool updatecategoria(Categoria c, int id_categoria)
         {
             abrirConexion();
-            string cmd = ("update categoria set nombre_categoria = '" + c.Nombre + "',descripcion_categoria = '" + c.Descripcion  + " where id_categoria = " + id_categoria + "; ");
+            string cmd = ("update categoria set nombre_categoria = '" + c.Nombre + "', descripcion_categoria = '" + c.Descripcion  + "' where id_categoria = " + id_categoria + "; ");
             MySqlCommand query = new MySqlCommand(cmd, cnn);
             int filas = query.ExecuteNonQuery();
             if (filas > 0)
@@ -512,13 +512,13 @@ namespace Proyecto
         {
             dtg.Rows.Clear();
             abrirConexion();
-            string cmd = "select * from producto where id_Articulo like '%" + id_producto + "%'";
+            string cmd = "select * from producto inner join categoria on categoria.id_categoria = producto.id_categoria where id_Articulo like '%" + id_producto + "%'";
             MySqlCommand query = new MySqlCommand(cmd, cnn);
             MySqlDataReader consultar;
             consultar = query.ExecuteReader();
             while (consultar.Read())
             {
-                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetInt32(1), consultar.GetString(2), consultar.GetString(3),
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetString(7), consultar.GetString(2), consultar.GetString(3),
                 consultar.GetDecimal(4), consultar.GetInt32(5));
             }
             cerrarConexion();

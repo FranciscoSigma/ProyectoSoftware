@@ -34,7 +34,7 @@ namespace Proyecto
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            producto p = new producto(comCategoria.SelectedIndex, txtcodigo.Text, txtNombre.Text, decimal.Parse(txtPrecio.Text),
+            producto p = new producto((comCategoria.SelectedIndex+1), txtcodigo.Text, txtNombre.Text, decimal.Parse(txtPrecio.Text),
                 int.Parse(txtInventario.Text));
             if (mysql.InsertProducto(p))
             {
@@ -51,7 +51,7 @@ namespace Proyecto
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            producto p = new producto(comCategoria.SelectedIndex, txtcodigo.Text, txtNombre.Text, decimal.Parse(txtPrecio.Text),
+            producto p = new producto(comCategoria.SelectedIndex+1, txtcodigo.Text, txtNombre.Text, decimal.Parse(txtPrecio.Text),
                 int.Parse(txtInventario.Text));
             if (mysql.updateProducto(p, int.Parse(txtBuscarID.Text)))
             {
@@ -94,7 +94,7 @@ namespace Proyecto
             }
             if (p != null)
             {
-                comCategoria.SelectedIndex = p.id_categoria;
+                comCategoria.SelectedIndex = p.id_categoria-1;
                 txtcodigo.Text = p.codigo;
                 txtNombre.Text = p.Nombre;
                 txtPrecio.Text = p.Precio.ToString();
@@ -120,6 +120,7 @@ namespace Proyecto
                 limpiarcontrolcategoria();
             }
             dtgcategoria = mysql.MostrarCategoria(dtgcategoria);
+            comCategoria = mysql.Mostrarcategoriascombobox(comCategoria);
         }
 
         private void btnModCat_Click(object sender, EventArgs e)
@@ -135,6 +136,7 @@ namespace Proyecto
             }
             limpiarcontrolcategoria();
             dtgcategoria = mysql.MostrarCategoria(dtgcategoria);
+            comCategoria = mysql.Mostrarcategoriascombobox(comCategoria);
         }
 
         private void btnDeleteCat_Click(object sender, EventArgs e)
@@ -148,6 +150,7 @@ namespace Proyecto
                 MessageBox.Show("No se ha podiod eliminar los datos");
             limpiarcontrolcategoria();
             dtgcategoria = mysql.MostrarCategoria(dtgcategoria);
+            comCategoria = mysql.Mostrarcategoriascombobox(comCategoria);
         }
 
         private void txtBuscarCategoriaID_TextChanged(object sender, EventArgs e)
