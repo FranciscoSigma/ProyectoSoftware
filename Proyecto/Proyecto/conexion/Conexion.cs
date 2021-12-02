@@ -38,7 +38,7 @@ namespace Proyecto
             cnn.Close();
         }
 
-        #region
+        #region Empleado
 
         public DataGridView MostrarEmpleado(DataGridView dtg)
         {
@@ -93,7 +93,7 @@ namespace Proyecto
             }
         }
 
-            public Empleado buscarempelado(int id_empleado)
+        public Empleado buscarempelado(int id_empleado)
             {
                 abrirConexion();
                 if (UserLoginCache.Puesto == "administrador")
@@ -204,5 +204,218 @@ namespace Proyecto
 
         #endregion
 
+        #region Cliente
+        public DataGridView MostrarCliente(DataGridView dtg)
+        {
+            dtg.Rows.Clear();
+            abrirConexion();
+            MySqlCommand cmd = new MySqlCommand("select * from cliente", cnn);
+            MySqlDataReader consultar;
+            consultar = cmd.ExecuteReader();
+            while (consultar.Read())
+            {
+                dtg.Rows.Add(consultar.GetDecimal(0), consultar.GetString(1), consultar.GetString(2), consultar.GetString(3),
+                    consultar.GetDecimal(4));
+            }
+            cerrarConexion();
+            return dtg;
+        }
+
+        public bool InsertCliente(Cliente c)
+        {
+            abrirConexion();
+            string cmd = "insert into cliente values(null,'" + c.Nombre + "', '" + c.ApellidoPaterno + "', '" + c.ApellidoMaterno +"'," + c.Telefono + "); ";
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+        public Cliente BuscarCliente(int id_cliente)
+        {
+            abrirConexion();
+                string cmd = "select * from cliente where id_cliente = " + id_cliente;
+                MySqlCommand query = new MySqlCommand(cmd, cnn);
+                MySqlDataReader consultar;
+                consultar = query.ExecuteReader();
+                Cliente c;
+                while (consultar.Read())
+                {
+                    c = new Cliente(consultar.GetString(1), consultar.GetString(2), consultar.GetString(3),
+                        consultar.GetDecimal(4));
+                    cerrarConexion();
+                    return c;
+                }
+            cerrarConexion();
+            return null;
+        }
+
+        public bool updateCliente(Cliente c, int id_cliente)
+        {
+            abrirConexion();
+            string cmd = ("update cliente set nombre_cliente = '" + c.Nombre + "',apellido_Paterno_cliente = '" + c.ApellidoPaterno +
+                "', apellido_materno_cliente = '" + c.ApellidoMaterno + "',telefono = " + c.Telefono + " where id_cliente = " + id_cliente + "; ");
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+
+        public bool deleteCliente(int id_cliente)
+        {
+            abrirConexion();
+            string cmd = "delete from cliente where id_cliente = " + id_cliente;
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+
+        public DataGridView MostrarClienteBuscado(DataGridView dtg, int id_cliente)
+        {
+            dtg.Rows.Clear();
+            abrirConexion();
+            string cmd = "select * from cliente where id_cliente like '%" + id_cliente + "%'";
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            MySqlDataReader consultar;
+            consultar = query.ExecuteReader();
+            while (consultar.Read())
+            {
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetString(1), consultar.GetString(2), consultar.GetString(3),
+                consultar.GetDecimal(4));
+            }
+            cerrarConexion();
+            return dtg;
+        }
+
+        #endregion
+
+        #region Categoria
+        public DataGridView MostrarCategoria(DataGridView dtg)
+        {
+            dtg.Rows.Clear();
+            abrirConexion();
+            MySqlCommand cmd = new MySqlCommand("select * from categoria", cnn);
+            MySqlDataReader consultar;
+            consultar = cmd.ExecuteReader();
+            while (consultar.Read())
+            {
+                dtg.Rows.Add(consultar.GetDecimal(0), consultar.GetString(1), consultar.GetString(2));
+            }
+            cerrarConexion();
+            return dtg;
+        }
+
+        public bool InsertCategoria(Categoria c)
+        {
+            abrirConexion();
+            string cmd = "insert into categoria values(null,'" + c.Nombre + "', '" + c.Descripcion + "'); ";
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+        public Categoria BuscarCategoria(int id_categoria)
+        {
+            abrirConexion();
+            string cmd = "select * from categoria where id_categoria = " + id_categoria;
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            MySqlDataReader consultar;
+            consultar = query.ExecuteReader();
+            Categoria c;
+            while (consultar.Read())
+            {
+                c = new Categoria(consultar.GetString(1), consultar.GetString(2));
+                cerrarConexion();
+                return c;
+            }
+            cerrarConexion();
+            return null;
+        }
+
+        public bool updatecategoria(Categoria c, int id_categoria)
+        {
+            abrirConexion();
+            string cmd = ("update categoria set nombre_categoria = '" + c.Nombre + "',descripcion_categoria = '" + c.Descripcion  + "; ");
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+
+        public bool deleteCategoria(int id_categoria)
+        {
+            abrirConexion();
+            string cmd = "delete from categoria where id_categoria = " + id_categoria;
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            int filas = query.ExecuteNonQuery();
+            if (filas > 0)
+            {
+                cerrarConexion();
+                return true;
+            }
+            else
+            {
+                cerrarConexion();
+                return false;
+            }
+        }
+
+        public DataGridView MostrarCategoriaBuscada(DataGridView dtg, int id_categoria)
+        {
+            dtg.Rows.Clear();
+            abrirConexion();
+            string cmd = "select * from categoria where id_categoria like '%" + id_categoria + "%'";
+            MySqlCommand query = new MySqlCommand(cmd, cnn);
+            MySqlDataReader consultar;
+            consultar = query.ExecuteReader();
+            while (consultar.Read())
+            {
+                dtg.Rows.Add(consultar.GetInt32(0), consultar.GetString(1), consultar.GetString(2));
+            }
+            cerrarConexion();
+            return dtg;
+        }
+
+        #endregion
     }
 }

@@ -12,10 +12,25 @@ namespace Proyecto
 {
     public partial class frmCliente : Form
     {
-        
+        Conexion mysql = new Conexion();
         public frmCliente()
         {
             InitializeComponent();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

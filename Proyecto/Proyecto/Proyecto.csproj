@@ -66,6 +66,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categoria.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="conexion\Conexion.cs" />
     <Compile Include="conexion\DatosUsuario.cs" />
     <Compile Include="conexion\OrdenesVenta.cs" />
